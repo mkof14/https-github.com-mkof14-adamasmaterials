@@ -10,6 +10,7 @@ export function About() {
       <SEO 
         title={t('nav.about')} 
         description="Discover Adamas Materials' mission to revolutionize industrial material synthesis through uncompromising quality and advanced lattice engineering." 
+        keywords="about adamas materials, material heritage, industrial synthesis mission, charlotte materials science, high-pressure synthesis history"
       />
       <div className="max-w-4xl space-y-24">
         <div className="space-y-12">

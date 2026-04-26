@@ -2,6 +2,7 @@ import React from 'react';
 import { ShieldCheck, Ruler, Activity, Layers } from 'lucide-react';
 import { motion } from 'motion/react';
 import { SEO } from '../components/SEO';
+import { TechnicalTerm } from '../components/TechnicalTerm';
 
 export function QualityProcess() {
   return (
@@ -9,6 +10,7 @@ export function QualityProcess() {
       <SEO 
         title="Quality & Process" 
         description="Learn about Adamas Materials' rigorous quality assurance protocols, synthesis methodologies (HPHT, CVD), and sub-nanometer precision standards." 
+        keywords="quality assurance materials, ISO 9001 synthesis, HPHT process, CVD growth standards, material validation, lattice integrity"
       />
       <div className="max-w-6xl space-y-32">
         {/* Header Section */}
@@ -27,13 +29,13 @@ export function QualityProcess() {
             <ProcessCard 
               icon={<ShieldCheck className="h-8 w-8" />}
               title="HPHT Synthesis"
-              description="High-Pressure High-Temperature synthesis replicates deep-earth conditions to create ultra-dense carbon lattices. We operate proprietary systems capable of maintaining stable 60k atm environments for extended growth cycles."
+              description={<>High-Pressure High-Temperature (<TechnicalTerm term="HPHT">HPHT</TechnicalTerm>) synthesis replicates deep-earth conditions to create ultra-dense carbon lattices. We operate proprietary systems capable of maintaining stable 60k atm environments for extended growth cycles.</>}
               specs={["60,000 atm", "1500°C+", "Uniform Heat Distribution"]}
             />
             <ProcessCard 
               icon={<Layers className="h-8 w-8" />}
               title="CVD Growth"
-              description="Chemical Vapor Deposition allows for the bottom-up assembly of diamond lattices at the atomic level. This method is preferred for defect-engineered samples and isotopic purity control (12C/13C ratios)."
+              description={<>Chemical Vapor Deposition (<TechnicalTerm term="CVD">CVD</TechnicalTerm>) allows for the bottom-up assembly of diamond lattices at the atomic level. This method is preferred for defect-engineered samples and isotopic purity control (12C/13C ratios).</>}
               specs={["Isotopic Control", "Plasma-Assisted", "Epitaxial Growth"]}
             />
           </div>
@@ -46,11 +48,11 @@ export function QualityProcess() {
             <div className="space-y-8">
               <ProtocolItem 
                 title="Multi-Spectrometric Analysis"
-                text="Every batch undergoes Raman and Photoluminescence (PL) spectroscopy to map nitrogen concentration and lattice strain."
+                text={<>Every batch undergoes <TechnicalTerm term="Raman Spectroscopy">Raman</TechnicalTerm> and Photoluminescence (PL) spectroscopy to map nitrogen concentration and lattice strain.</>}
               />
               <ProtocolItem 
-                title="Surface AFM Mapping"
-                text="Atomic Force Microscopy (AFM) verifies surface roughness and preparation characteristics according to client-specific Ra targets."
+                title={<TechnicalTerm term="AFM">Surface AFM Mapping</TechnicalTerm>}
+                text={<><TechnicalTerm term="AFM">Atomic Force Microscopy (AFM)</TechnicalTerm> verifies surface roughness and preparation characteristics according to client-specific Ra targets.</>}
               />
               <ProtocolItem 
                 title="Batch Traceability"
@@ -78,7 +80,9 @@ export function QualityProcess() {
                 </div>
                 <div className="space-y-1">
                   <span className="text-3xl font-display font-bold">99.9%</span>
-                  <p className="text-[9px] uppercase tracking-widest opacity-40">Lattice Purity</p>
+                  <TechnicalTerm term="Lattice Purity">
+                    <p className="text-[9px] uppercase tracking-widest opacity-40">Lattice Purity</p>
+                  </TechnicalTerm>
                 </div>
               </div>
             </div>
@@ -97,7 +101,7 @@ export function QualityProcess() {
   );
 }
 
-function ProcessCard({ icon, title, description, specs }: { icon: React.ReactNode, title: string, description: string, specs: string[] }) {
+function ProcessCard({ icon, title, description, specs }: { icon: React.ReactNode, title: string, description: React.ReactNode, specs: string[] }) {
   return (
     <div className="bg-white dark:bg-brand-ink p-16 space-y-10 group hover:bg-brand-tan/5 transition-all duration-500">
       <div className="text-brand-tan p-3 bg-brand-tan/10 w-fit rounded-xl group-hover:scale-110 transition-transform">
@@ -108,7 +112,11 @@ function ProcessCard({ icon, title, description, specs }: { icon: React.ReactNod
         <p className="font-sans text-lg font-light leading-relaxed opacity-60 dark:text-brand-cream/80">{description}</p>
         <div className="flex flex-wrap gap-3 pt-4">
           {specs.map((s, i) => (
-            <span key={i} className="px-4 py-1.5 border border-brand-tan/20 rounded-full font-sans text-[9px] uppercase font-bold tracking-widest text-brand-tan bg-brand-tan/5">{s}</span>
+            <TechnicalTerm key={i} term={s}>
+              <span className="px-4 py-1.5 border border-brand-tan/20 rounded-full font-sans text-[9px] uppercase font-bold tracking-widest text-brand-tan bg-brand-tan/5">
+                {s}
+              </span>
+            </TechnicalTerm>
           ))}
         </div>
       </div>
@@ -116,7 +124,7 @@ function ProcessCard({ icon, title, description, specs }: { icon: React.ReactNod
   );
 }
 
-function ProtocolItem({ title, text }: { title: string, text: string }) {
+function ProtocolItem({ title, text }: { title: React.ReactNode, text: React.ReactNode }) {
   return (
     <div className="space-y-3 group">
       <div className="flex items-center gap-4">

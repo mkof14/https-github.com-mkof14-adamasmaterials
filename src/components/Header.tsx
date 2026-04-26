@@ -32,8 +32,10 @@ export function Header() {
   };
 
   const navItems = [
+    { name: t('nav.home'), path: '/' },
     { name: t('nav.about'), path: '/about' },
     { name: t('nav.investors'), path: '/investors' },
+    { name: t('nav.materials'), path: '/materials' },
     { name: t('nav.capabilities'), path: '/capabilities' },
     { name: t('nav.applications'), path: '/applications' },
   ];
@@ -43,13 +45,15 @@ export function Header() {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex items-center gap-4 group" aria-label="Adamas Materials Home">
-            <span className="text-xl font-display font-bold tracking-tighter uppercase dark:text-white group-hover:text-brand-tan transition-colors">
-              Adamas<span className="font-light opacity-60">Materials</span>
-            </span>
+            <img 
+              src="/Logo.png" 
+              alt="Adamas Materials" 
+              className="h-28 w-auto object-contain transition-transform group-hover:scale-105 translate-y-1" 
+            />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-12">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -68,14 +72,6 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-6">
-            <Link 
-              to="/rfq" 
-              aria-label={t('nav.rfq')}
-              className="bg-brand-ink text-brand-cream dark:bg-brand-cream dark:text-brand-ink px-6 py-2.5 font-sans text-[10px] uppercase tracking-widest font-bold hover:bg-brand-tan dark:hover:bg-brand-tan transition-all duration-300 shadow-lg shadow-brand-ink/10 dark:shadow-brand-cream/5"
-            >
-              {t('nav.rfq')}
-            </Link>
-
             {/* Lang Switcher */}
             <div className="relative">
               <button
@@ -164,7 +160,6 @@ export function Header() {
             className="lg:hidden border-t border-slate-200 dark:border-slate-800 bg-brand-cream dark:bg-brand-ink overflow-hidden"
           >
             <div className="container mx-auto px-6 py-12 flex flex-col gap-6 text-center">
-              <Link to="/" onClick={() => setIsOpen(false)} className="font-display italic text-3xl hover:text-brand-tan dark:text-brand-cream transition-colors">{t('nav.home')}</Link>
               {navItems.map((item) => (
                 <Link
                   key={item.path}
@@ -176,15 +171,6 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="h-px bg-brand-tan/20 px-12" />
-              <Link 
-                to="/rfq" 
-                onClick={() => setIsOpen(false)}
-                aria-label="Request a Quote"
-                className="bg-brand-ink text-brand-cream dark:bg-brand-cream dark:text-brand-ink mx-auto px-12 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-brand-tan dark:hover:bg-brand-tan transition-colors shadow-xl"
-              >
-                RFQ
-              </Link>
               <div className="h-px bg-brand-tan/20 px-12" />
               <div className="flex flex-col gap-4 font-sans text-[10px] uppercase tracking-widest opacity-60">
                 <Link to="/privacy" onClick={() => setIsOpen(false)}>{t('footer.privacy')}</Link>

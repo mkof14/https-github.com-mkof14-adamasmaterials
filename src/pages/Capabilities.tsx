@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import { Microscope, Database, Globe, Ruler } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { TechnicalTerm } from '../components/TechnicalTerm';
 
 export function Capabilities() {
   const { t } = useTranslation();
@@ -10,13 +12,21 @@ export function Capabilities() {
       <SEO 
         title={t('nav.capabilities')} 
         description="Explore Adamas Materials' advanced capabilities in HPHT synthesis, CVD diamond growth, nano-fabrication, and computational physics for next-generation materials." 
+        keywords="hpht diamond synthesis, cvd diamond growth, nano-fabrication capabilities, computational material physics, lattice precision, mineral engineering"
       />
       <div className="max-w-6xl space-y-32">
         <div className="max-w-3xl space-y-12">
           <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('capabilities.excellence')}</span>
-          <h1 className="text-6xl md:text-8xl font-display leading-[0.9] italic truncate sm:overflow-visible">{t('capabilities.titlePart1')}<br/><span className="not-italic font-bold">{t('capabilities.titlePart2')}</span></h1>
+          <h1 className="text-6xl md:text-8xl font-display leading-[0.9] italic truncate sm:overflow-visible">
+            {t('capabilities.titlePart1')}<br/>
+            <span className="not-italic font-bold">
+              <TechnicalTerm term="Capabilities">{t('capabilities.titlePart2')}</TechnicalTerm>
+            </span>
+          </h1>
           <p className="text-2xl font-sans font-light leading-relaxed opacity-80 italic dark:text-brand-cream/90">
-            {t('capabilities.intro')}
+            <Trans i18nKey="capabilities.intro">
+              Our facilities are equipped with Proprietary <TechnicalTerm term="High-Pressure High-Temperature">High-Pressure High-Temperature (HPHT)</TechnicalTerm> systems, capable of simulating conditions at the Earth's core.
+            </Trans>
           </p>
         </div>
 
@@ -100,9 +110,11 @@ function CapabilityBlock({ icon, title, text, list }: { icon: React.ReactNode, t
         </p>
         <div className="flex flex-wrap gap-3 pt-4">
           {list.filter(Boolean).map((item, idx) => (
-            <span key={idx} className="bg-brand-tan/5 text-brand-tan border border-brand-tan/20 px-4 py-1.5 rounded-full font-sans text-[9px] uppercase font-bold tracking-widest whitespace-nowrap">
-              {item}
-            </span>
+            <TechnicalTerm key={idx} term={item || ""}>
+              <span className="bg-brand-tan/5 text-brand-tan border border-brand-tan/20 px-4 py-1.5 rounded-full font-sans text-[9px] uppercase font-bold tracking-widest whitespace-nowrap">
+                {item}
+              </span>
+            </TechnicalTerm>
           ))}
         </div>
       </div>

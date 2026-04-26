@@ -28,6 +28,7 @@ export function Legal() {
       <SEO 
         title={active.title} 
         description={`Adamas Materials ${active.title}. Understanding our protocols for industrial confidentiality, strategic sourcing, and liability.`} 
+        keywords={`legal, ${active.title}, adamas materials compliance, industrial privacy, terms of service`}
       />
       <div className="space-y-12">
         <header className="border-b border-slate-200 dark:border-slate-800 pb-8">

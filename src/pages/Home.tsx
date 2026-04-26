@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'motion/react';
-import { Microscope, Target, Zap } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Microscope, Target, Zap, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 
@@ -13,6 +13,7 @@ export function Home() {
       <SEO 
         title="Home" 
         description="Adamas Materials - Leading synthetic lattice engineering for industrial and quantum applications. Defect-engineered diamonds and advanced mineral synthesis." 
+        keywords="synthetic diamond, cvd diamond, diamond synthesis, industrial lattice, materials science, quantum grade materials, adamas materials, hpht synthesis, carbon lattice engineering"
       />
       {/* Hero Section */}
       <section className="min-h-[85vh] flex overflow-hidden border-b editorial-border">
@@ -122,41 +123,113 @@ export function Home() {
       {/* Advanced Solutions */}
       <section className="py-32 border-t editorial-border surface-gradient relative">
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-24 items-center">
-            <div className="flex-1 space-y-10">
-              <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('common.solutions')}</span>
-              <h2 className="text-4xl md:text-6xl font-display leading-tight italic">{t('home.extremePerformance').split('.')[0]}<br/><span className="not-italic font-bold">Performance.</span></h2>
-              <p className="text-lg font-sans font-light leading-relaxed opacity-70 dark:text-brand-cream/80">
-                {t('home.solutionText')}
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
-                {[
-                  t('home.categories.quantum'),
-                  t('home.categories.thermal'),
-                  t('home.categories.tooling'),
-                  t('home.categories.technical')
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4 group">
-                    <div className="h-0.5 w-6 bg-brand-tan group-hover:w-10 transition-all duration-500" />
-                    <span className="font-sans text-[11px] uppercase tracking-[0.2em] font-semibold dark:text-brand-cream">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex-1 w-full lg:w-auto">
-              <div className="relative border editorial-border p-4 bg-white dark:bg-brand-ink rounded-[4rem] group overflow-hidden shadow-2xl">
-                <div className="image-overlay z-10 opacity-20" />
-                <img 
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Industrial Data" 
-                  className="w-full object-cover grayscale rounded-[3rem] h-[500px] transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
+          <div className="max-w-4xl mx-auto space-y-10 text-center">
+            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('common.solutions')}</span>
+            <h2 className="text-4xl md:text-6xl font-display leading-tight italic">{t('home.extremePerformance').split('.')[0]}<br/><span className="not-italic font-bold">Performance.</span></h2>
+            <p className="text-lg font-sans font-light leading-relaxed opacity-70 dark:text-brand-cream/80 max-w-2xl mx-auto">
+              {t('home.solutionText')}
+            </p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
+              {[
+                t('home.categories.quantum'),
+                t('home.categories.thermal'),
+                t('home.categories.tooling'),
+                t('home.categories.technical')
+              ].map((item, idx) => (
+                <div key={idx} className="flex flex-col items-center gap-4 group">
+                  <div className="h-0.5 w-6 bg-brand-tan group-hover:w-10 transition-all duration-500" />
+                  <span className="font-sans text-[10px] uppercase tracking-[0.2em] font-semibold dark:text-brand-cream text-center">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FaqSection />
+
+      {/* Final CTA */}
+      <section className="py-32 bg-brand-ink dark:bg-brand-cream relative overflow-hidden">
+        <div className="absolute inset-0 accent-gradient opacity-10 pointer-events-none" />
+        <div className="container mx-auto px-6 text-center space-y-10 relative z-10">
+          <h2 className="text-5xl md:text-7xl font-display italic text-brand-cream dark:text-brand-ink leading-tight">
+            Ready to Forge the <span className="not-italic font-bold">Future?</span>
+          </h2>
+          <div className="flex justify-center">
+            <Link to="/rfq" className="bg-brand-tan text-brand-ink px-16 py-6 font-sans text-xs uppercase tracking-[0.3em] font-extrabold hover:bg-brand-cream hover:text-brand-ink transition-all shadow-2xl hover:scale-105 active:scale-95">
+              Initiate Project
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
+  );
+}
+
+function FaqSection() {
+  const { t } = useTranslation();
+  const faqItems = t('home.faq.items', { returnObjects: true }) as Array<{ q: string, a: string }>;
+  const [openIndex, setOpenIndex] = React.useState<number | null>(null);
+
+  return (
+    <section className="py-32 bg-brand-cream dark:bg-brand-ink border-t editorial-border">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto space-y-16">
+          <div className="text-center space-y-4">
+            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Inquiries</span>
+            <h2 className="text-4xl md:text-6xl font-display leading-tight italic">
+              {t('home.faq.title')}
+            </h2>
+            <p className="max-w-2xl mx-auto text-lg font-sans font-light opacity-60 dark:text-brand-cream/60">
+              {t('home.faq.subtitle')}
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqItems.map((item, idx) => (
+              <div 
+                key={idx}
+                className="border-b editorial-border overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                  className="w-full py-8 flex justify-between items-center text-left group"
+                >
+                  <span className="text-xl md:text-2xl font-display italic group-hover:text-brand-tan transition-colors duration-300 dark:text-brand-cream">
+                    {item.q}
+                  </span>
+                  <div className={`h-8 w-8 rounded-full border border-brand-tan/30 flex items-center justify-center transition-all duration-500 flex-shrink-0 ml-4 ${openIndex === idx ? 'bg-brand-tan rotate-45' : 'group-hover:border-brand-tan'}`}>
+                    <Plus className={`h-4 w-4 transition-colors duration-500 ${openIndex === idx ? 'text-brand-cream' : 'text-brand-tan'}`} />
+                  </div>
+                </button>
+                <AnimatePresence>
+                  {openIndex === idx && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                    >
+                      <p className="pb-12 text-lg font-sans font-light leading-relaxed opacity-70 max-w-3xl dark:text-brand-cream/70">
+                        {item.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+          
+          <div className="pt-8 text-center">
+            <p className="font-sans text-xs uppercase tracking-[0.2em] opacity-40 mb-6 italic">Still have technical questions?</p>
+            <Link to="/rfq" className="font-sans text-[10px] uppercase tracking-widest font-extrabold text-brand-tan border-b border-brand-tan/30 pb-2 hover:border-brand-tan transition-all">
+              Consult with Engineering
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

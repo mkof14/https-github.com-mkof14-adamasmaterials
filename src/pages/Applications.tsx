@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { SEO } from '../components/SEO';
+import { TechnicalTerm } from '../components/TechnicalTerm';
 
 export function Applications() {
   const { t } = useTranslation();
@@ -34,6 +35,7 @@ export function Applications() {
       <SEO 
         title={t('nav.applications')} 
         description="Strategic applications of Adamas Materials' synthetic lattices in photonics, quantum research, sensing, and thermal management." 
+        keywords="photonics applications, quantum research materials, thermal management engineering, high-precision sensing, industrial diamond applications, semiconductor materials"
       />
       <div className="max-w-6xl space-y-24">
         <div className="max-w-3xl space-y-12">
@@ -57,7 +59,9 @@ export function Applications() {
               <div className="space-y-6 relative z-10">
                 <div className="flex items-center gap-4">
                   <div className="h-2 w-2 bg-brand-tan rounded-full animate-pulse" />
-                  <h2 className="text-3xl font-display italic tracking-tight">{app.name}</h2>
+                  <TechnicalTerm term={app.name}>
+                    <h2 className="text-3xl font-display italic tracking-tight">{app.name}</h2>
+                  </TechnicalTerm>
                 </div>
                 <p className="font-sans text-lg font-light leading-relaxed opacity-60 dark:text-brand-cream/80">
                   {app.desc}

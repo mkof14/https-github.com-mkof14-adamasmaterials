@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 
@@ -10,6 +11,7 @@ export function Investors() {
       <SEO 
         title={t('nav.investors')} 
         description="Investor relations for Adamas Materials. Insights into our growth metrics, annual reports, and strategic capital management in materials science." 
+        keywords="investor relations, materials science growth, capital management, adamas materials funding, synthetic diamond market"
       />
       <div className="max-w-4xl space-y-24">
         <div className="space-y-12">

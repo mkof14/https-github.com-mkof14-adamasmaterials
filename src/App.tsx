@@ -15,6 +15,9 @@ import { RFQ } from './pages/RFQ';
 import { Legal } from './pages/Legal';
 import { QualityProcess } from './pages/QualityProcess';
 import { Glossary } from './pages/Glossary';
+import Contact from './pages/Contact';
+
+import { Materials } from './pages/Materials';
 
 export default function App() {
   return (
@@ -25,6 +28,7 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="investors" element={<Investors />} />
+            <Route path="materials" element={<Materials />} />
             <Route path="capabilities" element={<Capabilities />} />
             <Route path="quality" element={<QualityProcess />} />
             <Route path="glossary" element={<Glossary />} />
@@ -33,7 +37,7 @@ export default function App() {
             <Route path="privacy" element={<Legal />} />
             <Route path="terms" element={<Legal />} />
             <Route path="compliance" element={<Legal />} />
-            <Route path="contact" element={<RFQ />} />
+            <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
       </BrowserRouter>

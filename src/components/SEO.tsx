@@ -4,18 +4,21 @@ import { Helmet } from 'react-helmet-async';
 interface SEOProps {
   title?: string;
   description?: string;
+  keywords?: string;
 }
 
-export function SEO({ title, description }: SEOProps) {
+export function SEO({ title, description, keywords }: SEOProps) {
+  const canonicalUrl = `https://www.adamasmaterials.com${window.location.pathname}`;
   const fullTitle = title ? `${title} | Adamas Materials` : 'Adamas Materials | Synthetic Lattice Engineering';
   const metaDescription = description || "Uncompromising quality in synthetic lattice engineering and advanced materials science.";
+  const metaKeywords = keywords || "synthetic diamond, cvd diamond, industrial lattice, materials science, quantum grade materials, adamas materials";
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Adamas Materials",
-    "url": "https://adamas-materials.com",
-    "logo": "https://adamas-materials.com/logo.png",
+    "url": "https://www.adamasmaterials.com",
+    "logo": "https://www.adamasmaterials.com/Logo.png",
     "description": "Uncompromising quality in synthetic lattice engineering and advanced materials science.",
     "address": {
       "@type": "PostalAddress",
@@ -25,7 +28,7 @@ export function SEO({ title, description }: SEOProps) {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "ops@adamas-materials.com",
+      "email": "ops@adamasmaterials.com",
       "contactType": "customer service"
     }
   };
@@ -75,12 +78,24 @@ export function SEO({ title, description }: SEOProps) {
       <Helmet>
         <title>{fullTitle}</title>
         <meta name="description" content={metaDescription} />
+        <meta name="keywords" content={metaKeywords} />
+        <link rel="canonical" href={canonicalUrl} />
+        
+        {/* Hreflang for international SEO */}
+        <link rel="alternate" href="https://www.adamasmaterials.com/" hrefLang="x-default" />
+        <link rel="alternate" href="https://www.adamasmaterials.com/ru" hrefLang="ru" />
+        <link rel="alternate" href="https://www.adamasmaterials.com/uk" hrefLang="uk" />
+        <link rel="alternate" href="https://www.adamasmaterials.com/es" hrefLang="es" />
+        <link rel="alternate" href="https://www.adamasmaterials.com/de" hrefLang="de" />
+        <link rel="alternate" href="https://www.adamasmaterials.com/fr" hrefLang="fr" />
+        <link rel="alternate" href="https://www.adamasmaterials.com/ja" hrefLang="ja" />
+        
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={metaDescription} />
-        <meta property="og:url" content="https://adamas-materials.com" />
-        {/* Twitter */}
+        <meta property="og:url" content="https://www.adamasmaterials.com" />
+        <meta property="og:site_name" content="Adamas Materials" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={metaDescription} />
