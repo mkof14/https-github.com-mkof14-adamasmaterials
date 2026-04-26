@@ -16,10 +16,12 @@ export function Home() {
         keywords="synthetic diamond, cvd diamond, diamond synthesis, industrial lattice, materials science, quantum grade materials, adamas materials, hpht synthesis, carbon lattice engineering"
       />
       {/* Hero Section */}
-      <section className="min-h-[85vh] flex overflow-hidden border-b editorial-border">
+      <section className="min-h-[85vh] flex overflow-hidden border-b editorial-border relative">
+        <div className="absolute inset-0 crystalline-bg opacity-[0.05] pointer-events-none" />
+        
         {/* Content Side */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center p-12 lg:p-24 space-y-10 bg-brand-cream dark:bg-brand-ink relative">
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-sand/20 dark:from-brand-charcoal/20 to-transparent pointer-events-none" />
+        <div className="w-full lg:w-1/2 flex flex-col justify-center p-12 lg:p-24 space-y-10 bg-brand-cream/80 dark:bg-brand-ink/80 backdrop-blur-sm relative border-r editorial-border">
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-prismatic-cyan/10 dark:from-brand-prismatic-cyan/5 to-transparent pointer-events-none" />
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -30,7 +32,7 @@ export function Home() {
             </span>
             <h1 className="text-6xl md:text-8xl leading-[0.9] italic font-display">
               {t('home.heroTitle').split('.').map((part, i) => i === 0 ? <React.Fragment key={i}>{part}<br/></React.Fragment> : null)}
-              <span className="not-italic font-bold">Synthesis.</span>
+              <span className="not-italic font-bold bg-gradient-to-r from-brand-ink via-brand-tan to-brand-ink dark:from-brand-cream dark:via-brand-tan dark:to-brand-cream bg-clip-text text-transparent">Synthesis.</span>
             </h1>
           </motion.div>
           
@@ -49,17 +51,20 @@ export function Home() {
             transition={{ delay: 0.4 }}
             className="flex flex-wrap gap-6 pt-4 relative z-10"
           >
-            <Link to="/rfq" className="bg-brand-ink text-brand-cream dark:bg-brand-cream dark:text-brand-ink px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-brand-tan dark:hover:bg-brand-tan transition-all duration-500 shadow-xl">
-              {t('home.cta')}
+            <Link to="/rfq" className="bg-brand-ink text-brand-cream dark:bg-brand-cream dark:text-brand-ink px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-brand-tan dark:hover:bg-brand-tan transition-all duration-500 shadow-xl relative overflow-hidden group">
+              <span className="relative z-10">{t('home.cta')}</span>
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-0 -left-full w-full h-full shimmer opacity-20 transition-all group-hover:left-full duration-1000" />
+              </div>
             </Link>
-            <Link to="/about" className="border border-brand-ink dark:border-brand-cream px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-brand-ink hover:text-white dark:hover:bg-brand-cream dark:hover:text-brand-ink transition-all">
+            <Link to="/about" className="border border-brand-ink/20 dark:border-brand-cream/20 px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-brand-ink hover:text-white dark:hover:bg-brand-cream dark:hover:text-brand-ink transition-all backdrop-blur-sm">
               {t('common.learnMore')}
             </Link>
           </motion.div>
         </div>
 
         {/* Visual Side */}
-        <div className="hidden lg:flex w-1/2 relative accent-gradient items-center justify-center p-12 lg:p-24 border-l editorial-border overflow-hidden">
+        <div className="hidden lg:flex w-1/2 relative prismatic-gradient items-center justify-center p-12 lg:p-24 overflow-hidden">
           <div className="absolute inset-0 subtle-pulse" style={{ backgroundImage: 'radial-gradient(var(--color-brand-tan) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
           
           <div className="z-10 text-center space-y-12 w-full max-w-lg">
@@ -67,10 +72,11 @@ export function Home() {
               initial={{ rotate: 45, opacity: 0 }}
               animate={{ rotate: 12, opacity: 1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="w-64 h-64 bg-brand-ink mx-auto rounded-[3rem] flex items-center justify-center shadow-[0_50px_100px_-20px_rgba(196,164,132,0.4)] border border-brand-tan/20 relative group overflow-hidden"
+              className="w-64 h-64 bg-brand-ink mx-auto rounded-[3rem] flex items-center justify-center diamond-shadow border border-brand-tan/20 relative group overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-tan/20 via-transparent to-brand-gold/10 opacity-50" />
-              <div className="w-52 h-52 border-2 border-brand-tan/10 rounded-[2.5rem] flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-tr from-brand-prismatic-cyan/20 via-transparent to-brand-prismatic-violet/20 opacity-50" />
+              <div className="w-52 h-52 border-2 border-brand-tan/10 rounded-[2.5rem] flex items-center justify-center relative">
+                <div className="absolute top-0 -left-full w-full h-full shimmer opacity-40 group-hover:left-full transition-all duration-[2000ms]" />
                 <div className="w-40 h-40 border border-brand-tan/20 rounded-[2rem] flex items-center justify-center bg-brand-ink relative overflow-hidden">
                   <div className="absolute inset-0 accent-gradient opacity-10" />
                   <span className="text-white font-display text-7xl font-bold logo-glow relative z-10">A</span>
@@ -87,8 +93,9 @@ export function Home() {
       </section>
 
       {/* Positioning */}
-      <section className="py-32 bg-brand-cream dark:bg-brand-ink relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 accent-gradient rounded-full blur-[120px] opacity-20 -mr-48 -mt-48" />
+      <section className="py-32 bg-brand-cream dark:bg-brand-ink relative overflow-hidden border-b editorial-border">
+        <div className="absolute top-0 right-0 w-96 h-96 prismatic-gradient rounded-full blur-[120px] opacity-10 -mr-48 -mt-48" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-prismatic-cyan/5 rounded-full blur-[120px] opacity-20 -ml-48 -mb-48" />
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl space-y-4">

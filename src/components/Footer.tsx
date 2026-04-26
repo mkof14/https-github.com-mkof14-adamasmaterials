@@ -38,7 +38,7 @@ export function Footer() {
     <footer className="mt-auto border-t editorial-border bg-white dark:bg-brand-ink px-6 lg:px-12 py-12 flex flex-col space-y-10">
       <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
         <div className="w-full lg:w-1/4 space-y-8">
-          <Link to="/" aria-label="Adamas Materials Home" className="block max-w-[460px]">
+          <Link to="/" aria-label="Adamas Materials Home" className="block max-w-[529px]">
             <img src="/Logo.png" alt="Adamas Materials" className="w-full h-auto object-contain transition-opacity hover:opacity-80" />
           </Link>
           <p className="font-sans text-[10px] leading-relaxed opacity-60 uppercase tracking-widest dark:text-brand-cream">

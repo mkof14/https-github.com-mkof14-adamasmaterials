@@ -39,7 +39,7 @@ const resources = {
         }
       },
       home: {
-        heroTitle: 'Forging the Future of Synthesis.',
+        heroTitle: 'Redefining the Limits of Performance.',
         heroSubtitle: 'Leading industrial and scientific supplier of high-performance advanced materials for global infrastructure and quantum synthesis.',
         cta: 'Request Quote',
         positioningTitle: 'Industrial & Scientific Specialist',
@@ -191,7 +191,7 @@ const resources = {
         }
       },
       home: {
-        heroTitle: 'Формируя будущее синтеза.',
+        heroTitle: 'Переосмысливая границы возможного.',
         heroSubtitle: 'Ведущий промышленный и научный поставщик высокотехнологичных материалов для глобальной инфраструктуры и квантового синтеза.',
         cta: 'Запросить расчет',
         positioningTitle: 'Промышленная и научная специализация',
@@ -343,7 +343,7 @@ const resources = {
         }
       },
       home: {
-        heroTitle: 'Формуючи майбутнє синтезу.',
+        heroTitle: 'Переосмислюючи межі можливого.',
         heroSubtitle: 'Провідний промисловий та науковий постачальник високотехнологічних матеріалів для глобальної інфраструктури та квантового синтезу.',
         cta: 'Запити вартість',
         positioningTitle: 'Промислова та наукова спеціалізація',
@@ -467,7 +467,7 @@ const resources = {
         }
       },
       home: {
-        heroTitle: 'Forjando el Futuro de la Síntesis.',
+        heroTitle: 'Redefiniendo los Límites del Rendimiento.',
         heroSubtitle: 'Proveedor líder industrial y científico de materiales avanzados de alto rendimiento para infraestructura global y síntesis cuántica.',
         cta: 'Solicitar Cotización',
         positioningTitle: 'Especialista Industrial y Científico',
@@ -617,7 +617,7 @@ const resources = {
         }
       },
       home: {
-        heroTitle: 'Forger l\'Avenir de la Synthèse.',
+        heroTitle: 'Redéfinir les Limites de la Performance.',
         heroSubtitle: 'Premier fournisseur industriel et scientifique de matériaux avancés de haute performance pour l\'infrastructure mondiale et la synthèse quantique.',
         cta: 'Demander un Devis',
         positioningTitle: 'Spécialiste Industriel et Scientifique',
@@ -767,7 +767,7 @@ const resources = {
         }
       },
       home: {
-        heroTitle: 'Die Zukunft der Synthese schmieden.',
+        heroTitle: 'Leistungsgrenzen neu definieren.',
         heroSubtitle: 'Führender industrieller und wissenschaftlicher Lieferant von Hochleistungsmaterialien für globale Infrastruktur und Quantensynthese.',
         cta: 'Angebot anfordern',
         positioningTitle: 'Industrie- und Wissenschaftsspezialist',
@@ -916,7 +916,7 @@ const resources = {
         }
       },
       home: {
-        heroTitle: '合成の未来を拓く。',
+        heroTitle: '合成の限界を再定義する。',
         heroSubtitle: 'グローバルインフラと量子合成のための高性能先端材料の世界的な産業・科学サプライヤー。',
         cta: '見積を依頼する',
         positioningTitle: '産業・科学スペシャリスト',
@@ -1065,7 +1065,7 @@ const resources = {
         }
       },
       home: {
-        heroTitle: 'מעצבים את עתיד הסינטזה.',
+        heroTitle: 'מגדירים מחדש את גבולות הביצועים.',
         heroSubtitle: 'ספק תעשייתי ומדעי מוביל של חומרים מתקדמים בעלי ביצועים גבוהים לתשתית גלובלית וסינתזה קוונטית.',
         cta: 'בקש הצעת מחיר',
         positioningTitle: 'מומחה תעשייתי ומדעי',
@@ -1214,7 +1214,7 @@ const resources = {
         }
       },
       home: {
-        heroTitle: 'صياغة مستقبل التصنيع.',
+        heroTitle: 'إعادة تعريف حدود الأداء.',
         heroSubtitle: 'المورد الصناعي والعلمي الرائد للمواد المتقدمة عالية الأداء للبنية التحتية العالمية والتوليف الكمومي.',
         cta: 'طلب عرض سعر',
         positioningTitle: 'متخصص صناعي وعلمي',

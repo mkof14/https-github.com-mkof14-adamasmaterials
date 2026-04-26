@@ -48,7 +48,7 @@ export function Header() {
             <img 
               src="/Logo.png" 
               alt="Adamas Materials" 
-              className="h-28 w-auto object-contain transition-transform group-hover:scale-105 translate-y-1" 
+              className="h-[128.8px] w-auto object-contain transition-transform group-hover:scale-105 translate-y-1" 
             />
           </Link>
 

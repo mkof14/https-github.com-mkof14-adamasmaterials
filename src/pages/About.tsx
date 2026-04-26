@@ -41,15 +41,13 @@ export function About() {
             </div>
           </div>
           <div className="space-y-8">
-            <div className="aspect-[4/5] glass-card p-4 rounded-3xl border-brand-tan/20 shadow-2xl relative group overflow-hidden">
-              <div className="image-overlay z-10 opacity-30" />
+            <div className="aspect-[4/5] p-0 relative overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1532187875601-1e9ad82991e5?auto=format&fit=crop&q=80&w=1000" 
                 alt="Molecular Research" 
-                className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                className="w-full h-full object-cover rounded-[3.5rem] transition-transform duration-700 hover:scale-105 grayscale hover:grayscale-0 shadow-2xl border border-brand-tan/10"
               />
             </div>
-            <p className="font-sans text-[9px] italic text-brand-tan uppercase tracking-widest text-right font-bold opacity-60">Laboratory Phase 3 – Molecular Mapping</p>
           </div>
         </div>
       </div>
