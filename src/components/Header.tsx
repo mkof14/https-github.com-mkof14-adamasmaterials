@@ -5,6 +5,7 @@ import { Menu, X, Sun, Moon, Globe, ChevronDown } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from '../assets/Logo.png';
 
 const languages = [
   { code: 'en', label: 'English', flag: '🇺🇸' },
@@ -46,7 +47,7 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex items-center gap-4 group" aria-label="Adamas Materials Home">
             <img 
-              src="/Logo.png" 
+              src={logo} 
               alt="Adamas Materials" 
               className="h-[128.8px] w-auto object-contain transition-transform group-hover:scale-105 translate-y-1" 
             />

@@ -2,8 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Globe, ChevronUp } from 'lucide-react';
+import { Globe, ChevronUp, ChevronDown } from 'lucide-react';
 import { cn } from '../lib/utils';
+import logo from '../assets/Logo.png';
 
 const languages = [
   { code: 'en', flag: '🇺🇸', name: 'English' },
@@ -20,6 +21,7 @@ const languages = [
 export function Footer() {
   const { t, i18n } = useTranslation();
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isLegalOpen, setIsLegalOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -39,7 +41,7 @@ export function Footer() {
       <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
         <div className="w-full lg:w-1/4 space-y-8">
           <Link to="/" aria-label="Adamas Materials Home" className="block max-w-[529px]">
-            <img src="/Logo.png" alt="Adamas Materials" className="w-full h-auto object-contain transition-opacity hover:opacity-80" />
+            <img src={logo} alt="Adamas Materials" className="w-full h-auto object-contain transition-opacity hover:opacity-80" />
           </Link>
           <p className="font-sans text-[10px] leading-relaxed opacity-60 uppercase tracking-widest dark:text-brand-cream">
             Uncompromising quality in synthetic lattice engineering. Building the foundation of the next industrial era through precision materials science.
@@ -67,11 +69,29 @@ export function Footer() {
             <Link to="/contact" className="hover:opacity-50 transition-opacity whitespace-nowrap">Contact</Link>
             <Link to="/rfq" className="hover:opacity-50 transition-opacity whitespace-nowrap">RFQ</Link>
           </div>
+          
           <div className="flex flex-col space-y-3">
-            <span className="opacity-40">Legal</span>
-            <Link to="/privacy" aria-label={t('footer.privacy')} className="hover:opacity-50 transition-opacity whitespace-nowrap">{t('footer.privacy')}</Link>
-            <Link to="/terms" aria-label={t('footer.terms')} className="hover:opacity-50 transition-opacity whitespace-nowrap">{t('footer.terms')}</Link>
-            <Link to="/compliance" aria-label={t('nav.compliance')} className="hover:opacity-50 transition-opacity whitespace-nowrap">{t('nav.compliance')}</Link>
+            <button 
+              onClick={() => setIsLegalOpen(!isLegalOpen)}
+              className="flex items-center gap-2 opacity-40 hover:opacity-100 transition-opacity text-left uppercase tracking-[0.2em]"
+            >
+              Legal
+              <ChevronDown className={cn("w-3 h-3 transition-transform duration-300", isLegalOpen && "rotate-180")} />
+            </button>
+            <AnimatePresence>
+              {isLegalOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  className="overflow-hidden flex flex-col space-y-3"
+                >
+                  <Link to="/privacy" aria-label={t('footer.privacy')} className="hover:opacity-50 transition-opacity whitespace-nowrap">{t('footer.privacy')}</Link>
+                  <Link to="/terms" aria-label={t('footer.terms')} className="hover:opacity-50 transition-opacity whitespace-nowrap">{t('footer.terms')}</Link>
+                  <Link to="/compliance" aria-label={t('nav.compliance')} className="hover:opacity-50 transition-opacity whitespace-nowrap">{t('nav.compliance')}</Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
