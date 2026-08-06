@@ -44,7 +44,7 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b editorial-border bg-brand-cream/80 dark:bg-brand-ink/80 backdrop-blur-xl transition-all duration-500">
+    <header className="sticky top-0 z-50 w-full border-b border-brand-tan/25 dark:border-brand-border-dark bg-brand-mist/95 dark:bg-brand-ink/80 backdrop-blur-xl transition-all duration-500">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex items-center shrink-0" aria-label="Adamas Materials Home">
@@ -97,7 +97,7 @@ export function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     role="menu"
-                    className="absolute right-0 mt-2 w-48 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl overflow-hidden py-1"
+                    className="absolute right-0 mt-2 w-48 rounded-xl border border-slate-200 dark:border-slate-800 bg-brand-cream dark:bg-slate-900 shadow-xl overflow-hidden py-1"
                   >
                     {languages.map((l) => (
                       <button
@@ -106,8 +106,8 @@ export function Header() {
                         role="menuitem"
                         aria-label={`Switch to ${l.label}`}
                         className={cn(
-                          "w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors",
-                          i18n.language === l.code ? "text-brand-gold bg-slate-50 dark:bg-slate-800" : "text-slate-700 dark:text-slate-300"
+                          "w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-brand-sand/60 dark:hover:bg-slate-800 transition-colors",
+                          i18n.language === l.code ? "text-brand-gold bg-brand-sand/60 dark:bg-slate-800" : "text-slate-700 dark:text-slate-300"
                         )}
                       >
                         <span className="w-6">{l.flag}</span>

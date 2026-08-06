@@ -12,8 +12,8 @@ export function Materials() {
   return (
     <div className="min-h-screen bg-brand-cream dark:bg-brand-ink relative overflow-hidden">
       <div className="absolute inset-0 crystalline-bg opacity-[0.03] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] prismatic-gradient rounded-full blur-[150px] opacity-10 -mr-64 -mt-64" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] prismatic-gradient rounded-full blur-[150px] opacity-10 -ml-64 -mb-64" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] prismatic-gradient rounded-full blur-[150px] opacity-50 dark:opacity-10 -mr-64 -mt-64" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-copper/20 dark:bg-transparent prismatic-gradient rounded-full blur-[150px] opacity-40 dark:opacity-10 -ml-64 -mb-64" />
 
       <div className="container mx-auto px-6 py-24 relative z-10">
         <SEO 
@@ -44,7 +44,7 @@ export function Materials() {
                 className="glass-card group flex flex-col md:flex-row rounded-[3rem] border-brand-tan/20 hover:border-brand-tan/50 transition-all duration-500 overflow-hidden diamond-shadow"
               >
                 {/* Material Info */}
-                <div className="flex-1 p-12 space-y-8 bg-white/50 dark:bg-brand-ink/50 backdrop-blur-md relative overflow-hidden">
+                <div className="flex-1 p-12 space-y-8 bg-brand-sand/60 dark:bg-brand-ink/50 backdrop-blur-md relative overflow-hidden">
                   <div className="absolute inset-0 prismatic-gradient opacity-10 pointer-events-none" />
                   <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-20 transition-all duration-700">
                     {idx === 0 && <Shield className="w-32 h-32 rotate-12" />}
@@ -65,7 +65,7 @@ export function Materials() {
 
                   <div className="pt-4 relative z-10 flex flex-wrap gap-2">
                     {material.applications.map((app, appIdx) => (
-                      <span key={appIdx} className="font-sans text-[9px] uppercase tracking-widest font-bold opacity-60 px-3 py-1 border border-brand-tan/20 rounded-lg italic bg-white dark:bg-brand-charcoal/30">
+                      <span key={appIdx} className="font-sans text-[9px] uppercase tracking-widest font-bold opacity-60 px-3 py-1 border border-brand-tan/20 rounded-lg italic bg-brand-cream dark:bg-brand-charcoal/30">
                         {app}
                       </span>
                     ))}

@@ -41,7 +41,7 @@ export function Footer() {
   const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
 
   return (
-    <footer className="mt-auto border-t editorial-border bg-white dark:bg-brand-ink px-6 lg:px-12 py-12 flex flex-col space-y-10">
+    <footer className="mt-auto border-t border-brand-tan/20 dark:border-brand-border-dark bg-gradient-to-b from-brand-sand to-brand-mist dark:from-brand-ink dark:to-brand-ink px-6 lg:px-12 py-12 flex flex-col space-y-10">
       <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
         <div className="w-full lg:w-1/4 space-y-8">
           <Link to="/" aria-label="Adamas Materials Home" className="block max-w-[280px]">
@@ -122,7 +122,7 @@ export function Footer() {
             
             <button 
               onClick={() => setIsLangOpen(!isLangOpen)}
-              className="w-full flex items-center justify-between border editorial-border p-3 font-sans text-[10px] uppercase tracking-widest font-bold group hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors"
+              className="w-full flex items-center justify-between border editorial-border p-3 font-sans text-[10px] uppercase tracking-widest font-bold group hover:bg-brand-sand/60 dark:hover:bg-slate-900 transition-colors"
             >
               <div className="flex items-center gap-3">
                 <Globe className="w-3.5 h-3.5 text-brand-tan opacity-60" />
@@ -137,7 +137,7 @@ export function Footer() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-brand-ink border editorial-border shadow-2xl z-50 overflow-hidden"
+                  className="absolute bottom-full left-0 right-0 mb-2 bg-brand-cream dark:bg-brand-ink border editorial-border shadow-2xl z-50 overflow-hidden"
                 >
                   <div className="grid grid-cols-2 md:grid-cols-3 p-1">
                     {languages.map((l) => (

@@ -96,8 +96,8 @@ export function QualityProcess() {
 
 function ProcessCard({ icon, title, description, specs }: { icon: React.ReactNode, title: string, description: React.ReactNode, specs: string[] }) {
   return (
-    <div className="bg-white dark:bg-brand-ink p-16 space-y-10 group hover:bg-brand-tan/5 transition-all duration-500">
-      <div className="text-brand-tan p-3 bg-brand-tan/10 w-fit rounded-xl group-hover:scale-110 transition-transform">
+    <div className="bg-gradient-to-br from-brand-mist to-brand-sand/60 dark:from-brand-ink dark:to-brand-ink p-16 space-y-10 group hover:to-brand-copper/20 dark:hover:bg-brand-tan/5 transition-all duration-500">
+      <div className="text-brand-copper dark:text-brand-tan p-3 bg-brand-copper/15 dark:bg-brand-tan/10 w-fit rounded-xl group-hover:scale-110 transition-transform">
         {icon}
       </div>
       <div className="space-y-6">
@@ -106,7 +106,7 @@ function ProcessCard({ icon, title, description, specs }: { icon: React.ReactNod
         <div className="flex flex-wrap gap-3 pt-4">
           {specs.map((s, i) => (
             <TechnicalTerm key={i} term={s}>
-              <span className="px-4 py-1.5 border border-brand-tan/20 rounded-full font-sans text-[9px] uppercase font-bold tracking-widest text-brand-tan bg-brand-tan/5">
+              <span className="px-4 py-1.5 border border-brand-copper/25 dark:border-brand-tan/20 rounded-full font-sans text-[9px] uppercase font-bold tracking-widest text-brand-copper dark:text-brand-tan bg-brand-copper/10 dark:bg-brand-tan/5">
                 {s}
               </span>
             </TechnicalTerm>

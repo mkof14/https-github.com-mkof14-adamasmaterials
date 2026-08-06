@@ -17,11 +17,11 @@ export function Home() {
       />
       {/* Hero Section */}
       <section className="min-h-[85vh] flex overflow-hidden border-b editorial-border relative">
-        <div className="absolute inset-0 crystalline-bg opacity-[0.05] pointer-events-none" />
+        <div className="absolute inset-0 crystalline-bg pointer-events-none" />
         
         {/* Content Side */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center p-12 lg:p-24 space-y-10 bg-brand-cream/80 dark:bg-brand-ink/80 backdrop-blur-sm relative border-r editorial-border">
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-prismatic-cyan/10 dark:from-brand-prismatic-cyan/5 to-transparent pointer-events-none" />
+        <div className="w-full lg:w-1/2 flex flex-col justify-center p-12 lg:p-24 space-y-10 bg-brand-mist dark:bg-brand-ink/80 relative border-r editorial-border">
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-sand/80 via-brand-cream/40 to-transparent dark:from-brand-prismatic-cyan/5 dark:via-transparent pointer-events-none" />
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -64,7 +64,7 @@ export function Home() {
         </div>
 
         {/* Visual Side */}
-        <div className="hidden lg:flex w-1/2 relative prismatic-gradient items-center justify-center p-12 lg:p-24 overflow-hidden">
+        <div className="hidden lg:flex w-1/2 relative bg-brand-sand dark:bg-transparent prismatic-gradient items-center justify-center p-12 lg:p-24 overflow-hidden">
           <div className="absolute inset-0 subtle-pulse" style={{ backgroundImage: 'radial-gradient(var(--color-brand-tan) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
           
           <div className="z-10 text-center space-y-12 w-full max-w-lg">
@@ -93,9 +93,9 @@ export function Home() {
       </section>
 
       {/* Positioning */}
-      <section className="py-32 bg-brand-cream dark:bg-brand-ink relative overflow-hidden border-b editorial-border">
-        <div className="absolute top-0 right-0 w-96 h-96 prismatic-gradient rounded-full blur-[120px] opacity-10 -mr-48 -mt-48" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-prismatic-cyan/5 rounded-full blur-[120px] opacity-20 -ml-48 -mb-48" />
+      <section className="py-32 band-warm dark:bg-brand-ink relative overflow-hidden border-b editorial-border">
+        <div className="absolute top-0 right-0 w-96 h-96 prismatic-gradient rounded-full blur-[120px] opacity-40 dark:opacity-10 -mr-48 -mt-48" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-prismatic-cyan/20 dark:bg-brand-prismatic-cyan/5 rounded-full blur-[120px] opacity-50 dark:opacity-20 -ml-48 -mb-48" />
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl space-y-4">
@@ -157,8 +157,8 @@ export function Home() {
       <FaqSection />
 
       {/* Final CTA */}
-      <section className="py-32 bg-brand-ink dark:bg-brand-cream relative overflow-hidden">
-        <div className="absolute inset-0 accent-gradient opacity-10 pointer-events-none" />
+      <section className="py-32 bg-gradient-to-br from-brand-ink via-brand-charcoal to-brand-ink dark:from-brand-mist dark:via-brand-cream dark:to-brand-sand relative overflow-hidden">
+        <div className="absolute inset-0 accent-gradient opacity-20 dark:opacity-10 pointer-events-none" />
         <div className="container mx-auto px-6 text-center space-y-10 relative z-10">
           <h2 className="text-5xl md:text-7xl font-display italic text-brand-cream dark:text-brand-ink leading-tight">
             Ready to discuss your <span className="not-italic font-bold">CVD project?</span>
@@ -180,11 +180,12 @@ function FaqSection() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   return (
-    <section className="py-32 bg-brand-cream dark:bg-brand-ink border-t editorial-border">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section className="py-32 band-cool dark:bg-brand-ink border-t editorial-border relative overflow-hidden">
+      <div className="absolute inset-0 crystalline-bg pointer-events-none opacity-40 dark:opacity-100" />
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto space-y-16">
           <div className="text-center space-y-4">
-            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Inquiries</span>
+            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-copper font-bold">Inquiries</span>
             <h2 className="text-4xl md:text-6xl font-display leading-tight italic">
               {t('home.faq.title')}
             </h2>
@@ -245,9 +246,9 @@ function StatItem({ label, value }: { label: string, value: string }) {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="glass-card p-8 rounded-2xl text-left shadow-lg border-brand-tan/20"
+      className="glass-card p-8 rounded-2xl text-left shadow-lg border-brand-copper/30 bg-gradient-to-br from-brand-mist to-brand-sand/60 dark:from-transparent dark:to-transparent"
     >
-      <p className="font-sans text-[10px] uppercase tracking-widest text-brand-tan mb-2 font-bold">{label}</p>
+      <p className="font-sans text-[10px] uppercase tracking-widest text-brand-copper dark:text-brand-tan mb-2 font-bold">{label}</p>
       <p className="font-display text-4xl font-bold dark:text-brand-cream">{value}</p>
     </motion.div>
   );
@@ -257,9 +258,9 @@ function FeatureCard({ icon, title, text }: { icon: React.ReactNode, title: stri
   return (
     <motion.div 
       whileHover={{ y: -5 }}
-      className="p-10 border editorial-border glass-card space-y-8 flex flex-col items-start hover:border-brand-tan/50 transition-all duration-500 rounded-[3rem]"
+      className="p-10 border border-brand-copper/20 dark:border-brand-border-dark glass-card space-y-8 flex flex-col items-start hover:border-brand-copper/50 dark:hover:border-brand-tan/50 transition-all duration-500 rounded-[3rem] bg-gradient-to-b from-brand-mist to-brand-sand/40 dark:from-transparent dark:to-transparent"
     >
-      <div className="text-brand-tan p-4 bg-brand-tan/10 rounded-2xl">
+      <div className="text-brand-copper dark:text-brand-tan p-4 bg-brand-copper/15 dark:bg-brand-tan/10 rounded-2xl">
         {icon}
       </div>
       <div className="space-y-4">
@@ -268,7 +269,7 @@ function FeatureCard({ icon, title, text }: { icon: React.ReactNode, title: stri
           {text}
         </p>
       </div>
-      <div className="h-px w-12 bg-brand-tan mt-auto" />
+      <div className="h-px w-12 bg-gradient-to-r from-brand-copper to-brand-gold dark:bg-brand-tan mt-auto" />
     </motion.div>
   );
 }

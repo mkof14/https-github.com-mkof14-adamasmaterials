@@ -33,7 +33,7 @@ export function TechnicalTerm({ term, children }: TechnicalTermProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 5, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-4 bg-white dark:bg-slate-900 border border-brand-tan/20 rounded-xl shadow-xl shadow-black/10 backdrop-blur-sm"
+            className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-4 bg-brand-cream dark:bg-slate-900 border border-brand-tan/20 rounded-xl shadow-xl shadow-black/10 backdrop-blur-sm"
           >
             <div className="space-y-1">
               <span className="text-[10px] uppercase font-sans font-bold tracking-[0.2em] text-brand-tan block">

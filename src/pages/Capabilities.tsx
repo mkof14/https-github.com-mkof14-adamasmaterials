@@ -96,9 +96,9 @@ export function Capabilities() {
 
 function CapabilityBlock({ icon, title, text, list }: { icon: React.ReactNode, title: string, text: string, list: (string | undefined)[] }) {
   return (
-    <div className="bg-white dark:bg-brand-ink p-16 space-y-12 group hover:bg-brand-tan/10 transition-all duration-500 relative overflow-hidden">
-      <div className="absolute inset-0 accent-gradient opacity-0 group-hover:opacity-10 transition-opacity" />
-      <div className="text-brand-tan bg-brand-tan/10 p-4 w-fit rounded-2xl group-hover:scale-110 transition-transform relative z-10">
+    <div className="bg-gradient-to-br from-brand-mist to-brand-sand/50 dark:from-brand-ink dark:to-brand-ink p-16 space-y-12 group hover:from-brand-mist hover:to-brand-copper/15 dark:hover:bg-brand-tan/10 transition-all duration-500 relative overflow-hidden">
+      <div className="absolute inset-0 accent-gradient opacity-0 group-hover:opacity-40 dark:group-hover:opacity-10 transition-opacity" />
+      <div className="text-brand-copper dark:text-brand-tan bg-brand-copper/15 dark:bg-brand-tan/10 p-4 w-fit rounded-2xl group-hover:scale-110 transition-transform relative z-10">
         {icon}
       </div>
       <div className="space-y-6 relative z-10">
@@ -109,7 +109,7 @@ function CapabilityBlock({ icon, title, text, list }: { icon: React.ReactNode, t
         <div className="flex flex-wrap gap-3 pt-4">
           {list.filter(Boolean).map((item, idx) => (
             <TechnicalTerm key={idx} term={item || ""}>
-              <span className="bg-brand-tan/5 text-brand-tan border border-brand-tan/20 px-4 py-1.5 rounded-full font-sans text-[9px] uppercase font-bold tracking-widest whitespace-nowrap">
+              <span className="bg-brand-copper/10 dark:bg-brand-tan/5 text-brand-copper dark:text-brand-tan border border-brand-copper/25 dark:border-brand-tan/20 px-4 py-1.5 rounded-full font-sans text-[9px] uppercase font-bold tracking-widest whitespace-nowrap">
                 {item}
               </span>
             </TechnicalTerm>

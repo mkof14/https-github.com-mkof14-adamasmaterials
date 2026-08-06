@@ -53,12 +53,12 @@ export function Applications() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.1 }}
-              className="glass-card p-12 rounded-[3.5rem] border-brand-tan/20 shadow-xl group hover:border-brand-tan/50 transition-all duration-500 relative overflow-hidden"
+              className="glass-card p-12 rounded-[3.5rem] border-brand-copper/25 dark:border-brand-tan/20 shadow-xl group hover:border-brand-copper/50 dark:hover:border-brand-tan/50 transition-all duration-500 relative overflow-hidden bg-gradient-to-br from-brand-mist via-brand-cream to-brand-sand/50 dark:from-transparent dark:via-transparent dark:to-transparent"
             >
-              <div className="absolute inset-0 accent-gradient opacity-0 group-hover:opacity-10 transition-opacity" />
+              <div className="absolute inset-0 accent-gradient opacity-0 group-hover:opacity-30 dark:group-hover:opacity-10 transition-opacity" />
               <div className="space-y-6 relative z-10">
                 <div className="flex items-center gap-4">
-                  <div className="h-2 w-2 bg-brand-tan rounded-full animate-pulse" />
+                  <div className="h-2 w-2 bg-brand-copper dark:bg-brand-tan rounded-full animate-pulse" />
                   <TechnicalTerm term={app.name}>
                     <h2 className="text-3xl font-display italic tracking-tight">{app.name}</h2>
                   </TechnicalTerm>
@@ -66,7 +66,7 @@ export function Applications() {
                 <p className="font-sans text-lg font-light leading-relaxed opacity-60 dark:text-brand-cream/80">
                   {app.desc}
                 </p>
-                <div className="h-px w-12 bg-brand-tan/30 group-hover:w-20 transition-all duration-500" />
+                <div className="h-px w-12 bg-gradient-to-r from-brand-copper to-brand-prismatic-cyan dark:bg-brand-tan/30 group-hover:w-20 transition-all duration-500" />
               </div>
             </motion.div>
           ))}

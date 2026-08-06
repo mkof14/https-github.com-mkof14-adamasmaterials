@@ -58,7 +58,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * idx }}
-            className="p-8 border editorial-border space-y-6 group hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors"
+            className="p-8 border editorial-border space-y-6 group hover:bg-brand-sand/50 dark:hover:bg-slate-900/50 transition-colors"
           >
             <section.icon className="w-8 h-8 text-brand-gold" />
             <div className="space-y-4">
