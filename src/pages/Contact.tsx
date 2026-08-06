@@ -11,14 +11,14 @@ export default function Contact() {
       icon: Mail
     },
     {
-      title: "Research & Development",
-      description: "For technical specifications, research collaborations, and quantum-grade inquiries.",
+      title: "Technical & Research",
+      description: "For CVD specs, university projects, and engineering collaboration.",
       email: "rd@adamasmaterials.com",
       icon: Globe
     },
     {
       title: "Operations & Logistics",
-      description: "For production timelines, delivery status, and supply chain coordination.",
+      description: "For production timelines, delivery status, and order coordination.",
       email: "ops@adamasmaterials.com",
       icon: Phone
     }

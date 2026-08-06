@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Globe, ChevronUp, ChevronDown } from 'lucide-react';
 import { cn } from '../lib/utils';
-import logo from '../assets/Logo.png';
+import { useTheme } from '../context/ThemeContext';
+
+const logoLight = '/logo.png?v=12';
+const logoDark = '/logo-dark.png?v=12';
 
 const languages = [
   { code: 'en', flag: '🇺🇸', name: 'English' },
@@ -20,6 +23,7 @@ const languages = [
 
 export function Footer() {
   const { t, i18n } = useTranslation();
+  const { theme } = useTheme();
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isLegalOpen, setIsLegalOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
@@ -40,18 +44,22 @@ export function Footer() {
     <footer className="mt-auto border-t editorial-border bg-white dark:bg-brand-ink px-6 lg:px-12 py-12 flex flex-col space-y-10">
       <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
         <div className="w-full lg:w-1/4 space-y-8">
-          <Link to="/" aria-label="Adamas Materials Home" className="block max-w-[529px]">
-            <img src={logo} alt="Adamas Materials" className="w-full h-auto object-contain transition-opacity hover:opacity-80" />
+          <Link to="/" aria-label="Adamas Materials Home" className="block max-w-[280px]">
+            <img
+              src={theme === 'dark' ? logoDark : logoLight}
+              alt="Adamas Materials"
+              className="w-full h-auto object-contain"
+            />
           </Link>
           <p className="font-sans text-[10px] leading-relaxed opacity-60 uppercase tracking-widest dark:text-brand-cream">
-            Uncompromising quality in synthetic lattice engineering. Building the foundation of the next industrial era through precision materials science.
+            CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.
           </p>
           <div className="pt-4">
             <Link 
               to="/rfq" 
               className="inline-block bg-brand-tan text-brand-ink px-8 py-3 font-sans text-[10px] uppercase tracking-widest font-extrabold hover:bg-brand-ink hover:text-white transition-all shadow-lg"
             >
-              {t('nav.rfq')} / NDA Request
+              {t('nav.rfq')}
             </Link>
           </div>
         </div>

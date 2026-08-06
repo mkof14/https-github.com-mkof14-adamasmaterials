@@ -12,55 +12,55 @@ export interface Material {
 
 export const materials: Material[] = [
   {
-    id: 'hpht-industrial',
-    name: 'HPHT Industrial Diamond',
-    category: 'Industrial',
-    description: 'High-Pressure High-Temperature synthesized diamonds optimized for maximum thermal conductivity and abrasive durability. Ideal for extreme industrial environments.',
+    id: 'cvd-tooling',
+    name: 'CVD for Cutting Tools',
+    category: 'Tooling',
+    description: 'CVD diamond for cutting inserts and wear parts. Extreme hardness and wear resistance for precision machining and long edge life.',
     specifications: [
-      { label: 'Thermal Conductivity', value: '2200 W/mK' },
-      { label: 'Purity', value: '99.99%' },
-      { label: 'Hardness', value: '100 GPa' },
-      { label: 'Isotopic Control', value: 'Standard / High' }
+      { label: 'Process', value: 'CVD' },
+      { label: 'Key property', value: 'Hardness / wear resistance' },
+      { label: 'Thermal Conductivity', value: 'High' },
+      { label: 'Form', value: 'Blanks / coated solutions' }
     ],
-    applications: ['Precision Tooling', 'Heat Sinks', 'Abrasives']
+    applications: ['Cutting inserts', 'Precision machining', 'Wear parts']
   },
   {
-    id: 'cvd-optical',
-    name: 'CVD Optical Grade',
-    category: 'Optical',
-    description: 'Chemical Vapor Deposition grown diamond windows with uncompromising clarity and sub-nanometer surface roughness. Designed for high-power laser applications.',
+    id: 'cvd-thermal',
+    name: 'CVD for Thermal Management',
+    category: 'Cooling',
+    description: 'Heat sinks and heat spreaders with high thermal conductivity and low thermal expansion — for chips, data centers, GaN devices, and power electronics.',
     specifications: [
-      { label: 'Surface Roughness', value: '< 0.5 nm' },
-      { label: 'Optical Absorption', value: '< 0.05 cm⁻¹ @ 10.6μm' },
-      { label: 'Dimensions', value: 'Up to 100mm dia' },
-      { label: 'Transmittance', value: 'High UV-FIR' }
+      { label: 'Process', value: 'CVD' },
+      { label: 'Thermal Conductivity', value: 'Very high' },
+      { label: 'Thermal Expansion', value: 'Low' },
+      { label: 'Form', value: 'Plates / custom shapes' }
     ],
-    applications: ['Laser Windows', 'Optical Lenses', 'Broadband Windows']
+    applications: ['Data center cooling', 'Chip heat sinks', 'GaN / LED / RF thermal', 'Power electronics']
   },
   {
-    id: 'quantum-scaffolding',
-    name: 'Quantum Grade Scaffolding',
-    category: 'Quantum',
-    description: 'Specialized carbon lattices with precisely engineered defect centers (NV, SiV). Grown in controlled environments to ensure isotopic purity and spin coherence.',
+    id: 'cvd-semiconductor',
+    name: 'CVD for Semiconductors',
+    category: 'Semiconductor',
+    description: 'CVD diamond for substrates and high-power electronics. Wide bandgap, high carrier mobility, and strong heat handling versus Si and SiC in demanding cases.',
     specifications: [
-      { label: 'Defect Density', value: 'Controlled (ppb range)' },
-      { label: 'Isotopic Purity', value: '99.999% ¹²C' },
-      { label: 'Strain Control', value: '< 10⁻⁵' },
-      { label: 'Coherence Time', value: 'Optimized for Spin' }
+      { label: 'Process', value: 'CVD' },
+      { label: 'Use cases', value: 'RF, optoelectronics, power' },
+      { label: 'Form', value: 'Wafers / thermal parts' },
+      { label: 'Supply', value: 'Prototype to production' }
     ],
-    applications: ['Quantum Sensing', 'Quantum Computing', 'Research']
+    applications: ['RF amplifiers', 'Power devices', 'Laser diodes / LEDs', 'Die-attach & test']
   },
   {
-    id: 'technical-minerals',
-    name: 'Technical Mineral Synthesis',
-    category: 'Specialized',
-    description: 'Custom-engineered technical minerals for specific industrial requirements, including experimental lattices and doped crystal structures.',
+    id: 'cvd-research',
+    name: 'CVD for Research & Custom Work',
+    category: 'Research',
+    description: 'Custom CVD diamond for universities and engineering teams studying thermal, electronic, and materials performance.',
     specifications: [
-      { label: 'Crystal Structure', value: 'Custom engineered' },
-      { label: 'Doping Precision', value: 'Sub-ppm control' },
-      { label: 'Yield', value: 'Batch optimized' },
-      { label: 'Compatibility', value: 'Industrial standard' }
+      { label: 'Process', value: 'CVD' },
+      { label: 'Scope', value: 'Custom specs' },
+      { label: 'Support', value: 'Technical collaboration' },
+      { label: 'Volume', value: 'Lab to pilot' }
     ],
-    applications: ['Experimental Science', 'Semiconductors', 'Defense']
+    applications: ['University labs', 'Substrate studies', 'Pilot thermal projects']
   }
 ];

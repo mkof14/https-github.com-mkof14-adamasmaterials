@@ -9,8 +9,8 @@ export function About() {
     <div className="container mx-auto px-6 py-24">
       <SEO 
         title={t('nav.about')} 
-        description="Discover Adamas Materials' mission to revolutionize industrial material synthesis through uncompromising quality and advanced lattice engineering." 
-        keywords="about adamas materials, material heritage, industrial synthesis mission, charlotte materials science, high-pressure synthesis history"
+        description="Adamas Materials supplies CVD diamond for cutting tools, data center cooling, semiconductors, universities, and technical solutions." 
+        keywords="about adamas materials, cvd diamond company, charlotte cvd diamond"
       />
       <div className="max-w-4xl space-y-24">
         <div className="space-y-12">

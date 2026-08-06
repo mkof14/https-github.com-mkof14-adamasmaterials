@@ -12,8 +12,8 @@ export function Home() {
     <div className="flex flex-col">
       <SEO 
         title="Home" 
-        description="Adamas Materials - Leading synthetic lattice engineering for industrial and quantum applications. Defect-engineered diamonds and advanced mineral synthesis." 
-        keywords="synthetic diamond, cvd diamond, diamond synthesis, industrial lattice, materials science, quantum grade materials, adamas materials, hpht synthesis, carbon lattice engineering"
+        description="Adamas Materials — CVD diamond for cutting tools, heat sinks and heat spreaders, semiconductors, universities, and technical solutions." 
+        keywords="cvd diamond, cutting tools, heat spreader, data center cooling, semiconductor diamond, adamas materials"
       />
       {/* Hero Section */}
       <section className="min-h-[85vh] flex overflow-hidden border-b editorial-border relative">
@@ -31,8 +31,8 @@ export function Home() {
               {t('common.est2026')}
             </span>
             <h1 className="text-6xl md:text-8xl leading-[0.9] italic font-display">
-              {t('home.heroTitle').split('.').map((part, i) => i === 0 ? <React.Fragment key={i}>{part}<br/></React.Fragment> : null)}
-              <span className="not-italic font-bold bg-gradient-to-r from-brand-ink via-brand-tan to-brand-ink dark:from-brand-cream dark:via-brand-tan dark:to-brand-cream bg-clip-text text-transparent">Synthesis.</span>
+              {t('home.heroTitle')}<br/>
+              <span className="not-italic font-bold bg-gradient-to-r from-brand-ink via-brand-tan to-brand-ink dark:from-brand-cream dark:via-brand-tan dark:to-brand-cream bg-clip-text text-transparent">{t('home.heroAccent')}</span>
             </h1>
           </motion.div>
           
@@ -85,8 +85,8 @@ export function Home() {
             </motion.div>
 
             <div className="grid grid-cols-2 gap-6">
-              <StatItem label={t('common.quarterlyGrowth')} value="+14.8%" />
-              <StatItem label={t('common.patentAssets')} value="428+" />
+              <StatItem label={t('common.quarterlyGrowth')} value="B2B" />
+              <StatItem label={t('common.patentAssets')} value="CVD" />
             </div>
           </div>
         </div>
@@ -132,16 +132,16 @@ export function Home() {
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="max-w-4xl mx-auto space-y-10 text-center">
             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('common.solutions')}</span>
-            <h2 className="text-4xl md:text-6xl font-display leading-tight italic">{t('home.extremePerformance').split('.')[0]}<br/><span className="not-italic font-bold">Performance.</span></h2>
+            <h2 className="text-4xl md:text-6xl font-display leading-tight italic">{t('home.extremePerformance')}<br/><span className="not-italic font-bold">Solutions.</span></h2>
             <p className="text-lg font-sans font-light leading-relaxed opacity-70 dark:text-brand-cream/80 max-w-2xl mx-auto">
               {t('home.solutionText')}
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
               {[
-                t('home.categories.quantum'),
-                t('home.categories.thermal'),
                 t('home.categories.tooling'),
-                t('home.categories.technical')
+                t('home.categories.cooling'),
+                t('home.categories.semiconductors'),
+                t('home.categories.universities')
               ].map((item, idx) => (
                 <div key={idx} className="flex flex-col items-center gap-4 group">
                   <div className="h-0.5 w-6 bg-brand-tan group-hover:w-10 transition-all duration-500" />
@@ -161,11 +161,11 @@ export function Home() {
         <div className="absolute inset-0 accent-gradient opacity-10 pointer-events-none" />
         <div className="container mx-auto px-6 text-center space-y-10 relative z-10">
           <h2 className="text-5xl md:text-7xl font-display italic text-brand-cream dark:text-brand-ink leading-tight">
-            Ready to Forge the <span className="not-italic font-bold">Future?</span>
+            Ready to discuss your <span className="not-italic font-bold">CVD project?</span>
           </h2>
           <div className="flex justify-center">
             <Link to="/rfq" className="bg-brand-tan text-brand-ink px-16 py-6 font-sans text-xs uppercase tracking-[0.3em] font-extrabold hover:bg-brand-cream hover:text-brand-ink transition-all shadow-2xl hover:scale-105 active:scale-95">
-              Initiate Project
+              Request Quote
             </Link>
           </div>
         </div>
@@ -229,9 +229,9 @@ function FaqSection() {
           </div>
           
           <div className="pt-8 text-center">
-            <p className="font-sans text-xs uppercase tracking-[0.2em] opacity-40 mb-6 italic">Still have technical questions?</p>
+            <p className="font-sans text-xs uppercase tracking-[0.2em] opacity-40 mb-6 italic">Need a technical answer?</p>
             <Link to="/rfq" className="font-sans text-[10px] uppercase tracking-widest font-extrabold text-brand-tan border-b border-brand-tan/30 pb-2 hover:border-brand-tan transition-all">
-              Consult with Engineering
+              Send an RFQ
             </Link>
           </div>
         </div>

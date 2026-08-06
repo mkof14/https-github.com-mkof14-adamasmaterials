@@ -5,7 +5,9 @@ import { Menu, X, Sun, Moon, Globe, ChevronDown } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
-import logo from '../assets/Logo.png';
+
+const logoLight = '/logo.png?v=12';
+const logoDark = '/logo-dark.png?v=12';
 
 const languages = [
   { code: 'en', label: 'English', flag: '🇺🇸' },
@@ -45,11 +47,11 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b editorial-border bg-brand-cream/80 dark:bg-brand-ink/80 backdrop-blur-xl transition-all duration-500">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex h-20 items-center justify-between">
-          <Link to="/" className="flex items-center gap-4 group" aria-label="Adamas Materials Home">
-            <img 
-              src={logo} 
-              alt="Adamas Materials" 
-              className="h-[128.8px] w-auto object-contain transition-transform group-hover:scale-105 translate-y-1" 
+          <Link to="/" className="flex items-center shrink-0" aria-label="Adamas Materials Home">
+            <img
+              src={theme === 'dark' ? logoDark : logoLight}
+              alt="Adamas Materials"
+              className="h-14 md:h-16 w-auto object-contain"
             />
           </Link>
 

@@ -17,20 +17,20 @@ export function Materials() {
 
       <div className="container mx-auto px-6 py-24 relative z-10">
         <SEO 
-          title={t('nav.specifications')} 
-          description="Detailed technical specifications for Adamas Materials' synthetic diamond grades and experimental technical minerals." 
-          keywords="diamond specifications, purity standards, thermal conductivity, quantum grade lattice, industrial diamond data"
+          title={t('nav.materials')} 
+          description="CVD diamond materials for cutting tools, data center cooling, semiconductors, and research." 
+          keywords="cvd diamond materials, cutting tool diamond, thermal diamond, semiconductor cvd, research diamond"
         />
         
         <div className="max-w-7xl mx-auto space-y-24">
           <div className="max-w-3xl space-y-12">
             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('common.solutions')}</span>
             <h1 className="text-6xl md:text-8xl font-display leading-[0.9] italic truncate sm:overflow-visible text-pretty">
-              Technical<br/>
+              CVD<br/>
               <span className="not-italic font-bold bg-gradient-to-r from-brand-tan via-brand-ink to-brand-tan dark:from-brand-tan dark:via-brand-cream dark:to-brand-tan bg-clip-text text-transparent">Materials.</span>
             </h1>
             <p className="text-2xl font-sans font-light leading-relaxed opacity-80 italic dark:text-brand-cream/90 border-l-4 border-brand-tan pl-8">
-              Our catalog represents the pinnacle of synthetic lattice engineering, providing materials that push the boundaries of physics and industry.
+              CVD diamond for hardness and wear in tooling, heat sinks and spreaders for cooling, and materials for high-power electronics and research.
             </p>
           </div>
 

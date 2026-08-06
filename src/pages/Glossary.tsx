@@ -18,16 +18,16 @@ export function Glossary() {
     <div className="container mx-auto px-6 py-24">
       <SEO 
         title="Technical Glossary" 
-        description="A comprehensive technical glossary of terms related to materials science, diamond synthesis (HPHT, CVD), and quantum sensing." 
-        keywords="technical glossary, materials science terms, diamond synthesis terminology, quantum sensing definitions, HPHT terms, CVD terms, lattice terminology"
+        description="Short glossary of CVD diamond and related technical terms used by Adamas Materials." 
+        keywords="cvd glossary, chemical vapor deposition, heat spreader, cutting insert, raman spectroscopy"
       />
       <div className="max-w-4xl mx-auto space-y-16">
         {/* Header */}
         <div className="space-y-6">
-          <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Reference Material</span>
+          <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Reference</span>
           <h1 className="text-5xl md:text-7xl font-display leading-[0.9] italic">Technical<br/><span className="not-italic font-bold">Glossary.</span></h1>
           <p className="text-xl font-sans font-light leading-relaxed opacity-60 italic max-w-2xl">
-            A comprehensive reference for the terminology governing the next era of synthetic lattice engineering and quantum materials science.
+            Short definitions for CVD diamond and the applications we support.
           </p>
         </div>
 

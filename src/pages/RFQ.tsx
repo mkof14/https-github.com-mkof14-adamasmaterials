@@ -16,8 +16,8 @@ export function RFQ() {
     <div className="container mx-auto px-6 py-24">
       <SEO 
         title={t('nav.rfq')} 
-        description="Submit a request for proposal for high-pressure high-temperature synthesis, CVD diamond growth, or quantum-grade lattice engineering." 
-        keywords="request for quote, rfq materials, custom diamond synthesis, engineered lattice proposal, industrial research inquiry"
+        description="Request a quote for CVD diamond materials and technical solutions." 
+        keywords="cvd diamond rfq, cutting tools quote, data center cooling diamond, semiconductor cvd inquiry"
       />
       <div className="max-w-6xl flex flex-col lg:flex-row gap-24">
         <div className="flex-1 space-y-12">
@@ -25,7 +25,7 @@ export function RFQ() {
             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Inquiry</span>
             <h1 className="text-6xl font-display leading-tight italic truncate sm:overflow-visible text-pretty">Request for<br/><span className="not-italic font-bold">Proposal.</span></h1>
             <p className="font-sans text-xl font-light opacity-60 leading-relaxed italic border-l-2 border-brand-tan pl-6">
-              Adamas Materials handles each inquiry with professional discretion. For high-volume industrial partnerships, please provide detailed specifications.
+              Tell us the application, target specs, and volume. We work with industrial and research customers on CVD diamond projects.
             </p>
           </div>
 
@@ -78,16 +78,17 @@ export function RFQ() {
               <div className="space-y-4">
                 <label className="font-sans text-[10px] uppercase tracking-widest font-extrabold text-brand-tan">Material Specification</label>
                 <select className="w-full bg-transparent border-b border-brand-tan/30 py-4 font-display text-xl focus:outline-none focus:border-brand-tan transition-colors appearance-none cursor-pointer">
-                  <option className="bg-brand-cream dark:bg-brand-ink">HPHT Industrial Diamond</option>
-                  <option className="bg-brand-cream dark:bg-brand-ink">CVD Optical Grade</option>
-                  <option className="bg-brand-cream dark:bg-brand-ink">Quantum Grade Scaffolding</option>
-                  <option className="bg-brand-cream dark:bg-brand-ink">Technical Minerals (Other)</option>
+                  <option className="bg-brand-cream dark:bg-brand-ink">CVD for Cutting Tools</option>
+                  <option className="bg-brand-cream dark:bg-brand-ink">CVD for Data Center Cooling</option>
+                  <option className="bg-brand-cream dark:bg-brand-ink">CVD for Semiconductors</option>
+                  <option className="bg-brand-cream dark:bg-brand-ink">CVD for Universities / Research</option>
+                  <option className="bg-brand-cream dark:bg-brand-ink">Custom Technical Solution</option>
                 </select>
               </div>
 
               <div className="space-y-4">
                 <label className="font-sans text-[10px] uppercase tracking-widest font-extrabold text-brand-tan">Inquiry Details</label>
-                <textarea required className="w-full bg-transparent border-b border-brand-tan/30 py-4 font-display text-xl focus:outline-none focus:border-brand-tan transition-colors h-32 placeholder:opacity-20" placeholder="Detail your requirements for quantity, purity, and timeline..." />
+                <textarea required className="w-full bg-transparent border-b border-brand-tan/30 py-4 font-display text-xl focus:outline-none focus:border-brand-tan transition-colors h-32 placeholder:opacity-20" placeholder="Application, key specs, quantity, and timeline..." />
               </div>
 
               <button type="submit" className="w-full bg-brand-ink text-brand-cream dark:bg-brand-cream dark:text-brand-ink py-6 flex items-center justify-center gap-4 group hover:bg-brand-tan dark:hover:bg-brand-tan transition-all font-sans text-xs uppercase tracking-[0.2em] font-bold shadow-xl hover:scale-[1.02] active:scale-[0.98]">

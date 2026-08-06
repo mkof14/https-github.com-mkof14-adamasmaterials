@@ -9,17 +9,17 @@ interface SEOProps {
 
 export function SEO({ title, description, keywords }: SEOProps) {
   const canonicalUrl = `https://www.adamasmaterials.com${window.location.pathname}`;
-  const fullTitle = title ? `${title} | Adamas Materials` : 'Adamas Materials | Synthetic Lattice Engineering';
-  const metaDescription = description || "Uncompromising quality in synthetic lattice engineering and advanced materials science.";
-  const metaKeywords = keywords || "synthetic diamond, cvd diamond, industrial lattice, materials science, quantum grade materials, adamas materials";
+  const fullTitle = title ? `${title} | Adamas Materials` : 'Adamas Materials | CVD Diamond';
+  const metaDescription = description || "CVD diamond for cutting tools, heat sinks and heat spreaders, semiconductors, universities, and technical solutions.";
+  const metaKeywords = keywords || "cvd diamond, cutting tools, heat spreader, data center cooling, semiconductor diamond, adamas materials";
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Adamas Materials",
     "url": "https://www.adamasmaterials.com",
-    "logo": "https://www.adamasmaterials.com/Logo.png",
-    "description": "Uncompromising quality in synthetic lattice engineering and advanced materials science.",
+    "logo": "https://www.adamasmaterials.com/logo.png",
+    "description": "CVD diamond for cutting tools, data center cooling, semiconductors, universities, and technical solutions.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Charlotte",
@@ -40,33 +40,33 @@ export function SEO({ title, description, keywords }: SEOProps) {
       "@type": "Organization",
       "name": "Adamas Materials"
     },
-    "serviceType": "Industrial Material Synthesis",
+    "serviceType": "CVD Diamond Materials",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Materials Catalog",
+      "name": "CVD Materials",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "HPHT Industrial Diamond Synthesis",
-            "description": "High-Pressure High-Temperature synthesis for ultra-dense carbon lattices."
+            "name": "CVD for Cutting Tools",
+            "description": "CVD diamond for cutting inserts and wear parts."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "CVD Diamond Growth",
-            "description": "Chemical Vapor Deposition for defect-engineered diamond lattices."
+            "name": "CVD for Thermal Management",
+            "description": "CVD diamond heat spreaders for data centers and power electronics."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Quantum Grade Lattice Engineering",
-            "description": "Sub-nanometer precision material engineering for quantum applications."
+            "name": "CVD for Semiconductors & Research",
+            "description": "CVD diamond materials for semiconductor and university projects."
           }
         }
       ]

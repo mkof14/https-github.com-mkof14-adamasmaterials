@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { Microscope, Database, Globe, Ruler } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { TechnicalTerm } from '../components/TechnicalTerm';
@@ -11,8 +11,8 @@ export function Capabilities() {
     <div className="container mx-auto px-6 py-24">
       <SEO 
         title={t('nav.capabilities')} 
-        description="Explore Adamas Materials' advanced capabilities in HPHT synthesis, CVD diamond growth, nano-fabrication, and computational physics for next-generation materials." 
-        keywords="hpht diamond synthesis, cvd diamond growth, nano-fabrication capabilities, computational material physics, lattice precision, mineral engineering"
+        description="CVD diamond growth and technical capabilities for cutting tools, thermal management, semiconductors, and research." 
+        keywords="cvd diamond growth, cutting tool materials, data center thermal management, semiconductor cvd diamond"
       />
       <div className="max-w-6xl space-y-32">
         <div className="max-w-3xl space-y-12">
@@ -24,51 +24,49 @@ export function Capabilities() {
             </span>
           </h1>
           <p className="text-2xl font-sans font-light leading-relaxed opacity-80 italic dark:text-brand-cream/90">
-            <Trans i18nKey="capabilities.intro">
-              Our facilities are equipped with Proprietary <TechnicalTerm term="High-Pressure High-Temperature">High-Pressure High-Temperature (HPHT)</TechnicalTerm> systems, capable of simulating conditions at the Earth's core.
-            </Trans>
+            {t('capabilities.intro')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-1 bg-brand-border dark:bg-brand-border-dark border editorial-border overflow-hidden rounded-[4rem] shadow-2xl">
           <CapabilityBlock 
             icon={<Microscope className="w-8 h-8"/>}
-            title={t('capabilities.hpht.title')}
-            text={t('capabilities.hpht.text')}
+            title={t('capabilities.cvd.title')}
+            text={t('capabilities.cvd.text')}
             list={[
-              t('capabilities.hpht.items.0'),
-              t('capabilities.hpht.items.1'),
-              t('capabilities.hpht.items.2')
+              t('capabilities.cvd.items.0'),
+              t('capabilities.cvd.items.1'),
+              t('capabilities.cvd.items.2')
             ]}
           />
           <CapabilityBlock 
             icon={<Ruler className="w-8 h-8"/>}
-            title={t('capabilities.nano.title')}
-            text={t('capabilities.nano.text')}
+            title={t('capabilities.tooling.title')}
+            text={t('capabilities.tooling.text')}
             list={[
-              t('capabilities.nano.items.0'),
-              t('capabilities.nano.items.1'),
-              t('capabilities.nano.items.2')
+              t('capabilities.tooling.items.0'),
+              t('capabilities.tooling.items.1'),
+              t('capabilities.tooling.items.2')
             ]}
           />
           <CapabilityBlock 
             icon={<Database className="w-8 h-8"/>}
-            title={t('capabilities.comp.title')}
-            text={t('capabilities.comp.text')}
+            title={t('capabilities.thermal.title')}
+            text={t('capabilities.thermal.text')}
             list={[
-              t('capabilities.comp.items.0'),
-              t('capabilities.comp.items.1'),
-              t('capabilities.comp.items.2')
+              t('capabilities.thermal.items.0'),
+              t('capabilities.thermal.items.1'),
+              t('capabilities.thermal.items.2')
             ]}
           />
           <CapabilityBlock 
             icon={<Globe className="w-8 h-8"/>}
-            title={t('capabilities.supply.title')}
-            text={t('capabilities.supply.text')}
+            title={t('capabilities.custom.title')}
+            text={t('capabilities.custom.text')}
             list={[
-              t('capabilities.supply.items.0'),
-              t('capabilities.supply.items.1'),
-              t('capabilities.supply.items.2')
+              t('capabilities.custom.items.0'),
+              t('capabilities.custom.items.1'),
+              t('capabilities.custom.items.2')
             ]}
           />
         </div>
@@ -82,12 +80,12 @@ export function Capabilities() {
           </div>
           <div className="flex-1 grid grid-cols-2 gap-12 w-full lg:w-auto">
             <div className="space-y-4">
-              <span className="text-5xl font-display font-bold">99.9%</span>
-              <p className="font-sans text-[10px] uppercase tracking-widest opacity-40">{t('capabilities.purity')}</p>
+              <span className="text-5xl font-display font-bold">CVD</span>
+              <p className="font-sans text-[10px] uppercase tracking-widest opacity-40">{t('capabilities.precision')}</p>
             </div>
             <div className="space-y-4">
               <span className="text-5xl font-display font-bold">ISO</span>
-              <p className="font-sans text-[10px] uppercase tracking-widest opacity-40">2026:9001 {t('capabilities.compliance')}</p>
+              <p className="font-sans text-[10px] uppercase tracking-widest opacity-40">9001 {t('capabilities.compliance')}</p>
             </div>
           </div>
         </div>

@@ -9,24 +9,24 @@ export function Applications() {
   
   const apps = [
     { 
-      name: t('applications.items.photonics.name'), 
-      desc: t('applications.items.photonics.desc') 
+      name: t('applications.items.tooling.name'), 
+      desc: t('applications.items.tooling.desc') 
     },
     { 
-      name: t('applications.items.quantum.name'), 
-      desc: t('applications.items.quantum.desc') 
+      name: t('applications.items.cooling.name'), 
+      desc: t('applications.items.cooling.desc') 
     },
     { 
-      name: t('applications.items.sensing.name'), 
-      desc: t('applications.items.sensing.desc') 
+      name: t('applications.items.semiconductors.name'), 
+      desc: t('applications.items.semiconductors.desc') 
     },
     { 
-      name: t('applications.items.thermal.name'), 
-      desc: t('applications.items.thermal.desc') 
+      name: t('applications.items.universities.name'), 
+      desc: t('applications.items.universities.desc') 
     },
     { 
-      name: t('applications.items.science.name'), 
-      desc: t('applications.items.science.desc') 
+      name: t('applications.items.technical.name'), 
+      desc: t('applications.items.technical.desc') 
     }
   ];
 
@@ -34,8 +34,8 @@ export function Applications() {
     <div className="container mx-auto px-6 py-24">
       <SEO 
         title={t('nav.applications')} 
-        description="Strategic applications of Adamas Materials' synthetic lattices in photonics, quantum research, sensing, and thermal management." 
-        keywords="photonics applications, quantum research materials, thermal management engineering, high-precision sensing, industrial diamond applications, semiconductor materials"
+        description="CVD diamond applications: hardness for cutting tools, thermal conductivity for cooling, materials for semiconductors and research." 
+        keywords="cvd diamond applications, cutting tools, heat sink, heat spreader, semiconductor diamond, university research"
       />
       <div className="max-w-6xl space-y-24">
         <div className="max-w-3xl space-y-12">
