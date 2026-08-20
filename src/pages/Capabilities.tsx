@@ -8,27 +8,27 @@ export function Capabilities() {
   const { t } = useTranslation();
 
   return (
-    <div className="container mx-auto px-6 py-24">
+    <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title={t('nav.capabilities')} 
         description="CVD diamond growth and technical capabilities for cutting tools, thermal management, semiconductors, and research." 
         keywords="cvd diamond growth, cutting tool materials, data center thermal management, semiconductor cvd diamond"
       />
-      <div className="max-w-6xl space-y-32">
-        <div className="max-w-3xl space-y-12">
+      <div className="max-w-6xl space-y-16 sm:space-y-24 md:space-y-32">
+        <div className="max-w-3xl space-y-8 sm:space-y-12">
           <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('capabilities.excellence')}</span>
-          <h1 className="text-6xl md:text-8xl font-display leading-[0.9] italic truncate sm:overflow-visible">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display leading-[1.05] italic text-pretty">
             {t('capabilities.titlePart1')}<br/>
             <span className="not-italic font-bold">
               <TechnicalTerm term="Capabilities">{t('capabilities.titlePart2')}</TechnicalTerm>
             </span>
           </h1>
-          <p className="text-2xl font-sans font-light leading-relaxed opacity-80 italic dark:text-brand-cream/90">
+          <p className="text-lg sm:text-2xl font-sans font-light leading-relaxed opacity-80 dark:text-brand-cream/90">
             {t('capabilities.intro')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 bg-brand-border dark:bg-brand-border-dark border editorial-border overflow-hidden rounded-[4rem] shadow-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 bg-brand-border dark:bg-brand-border-dark border editorial-border overflow-hidden rounded-[1.75rem] sm:rounded-[4rem] shadow-2xl">
           <CapabilityBlock 
             icon={<Microscope className="w-8 h-8"/>}
             title={t('capabilities.cvd.title')}
@@ -71,7 +71,7 @@ export function Capabilities() {
           />
         </div>
 
-        <div className="py-20 border-y editorial-border flex flex-col md:flex-row gap-24 items-center surface-gradient p-12 rounded-[4rem]">
+        <div className="py-12 sm:py-20 border-y editorial-border flex flex-col md:flex-row gap-10 sm:gap-16 md:gap-24 items-center surface-gradient p-6 sm:p-10 md:p-12 rounded-[1.75rem] sm:rounded-[4rem]">
           <div className="flex-1 space-y-8">
             <h2 className="text-4xl font-display italic">{t('capabilities.qualityAssurance')}</h2>
             <p className="font-sans font-light opacity-70 leading-relaxed text-lg">
@@ -96,13 +96,13 @@ export function Capabilities() {
 
 function CapabilityBlock({ icon, title, text, list }: { icon: React.ReactNode, title: string, text: string, list: (string | undefined)[] }) {
   return (
-    <div className="bg-gradient-to-br from-brand-mist to-brand-sand/50 dark:from-brand-ink dark:to-brand-ink p-16 space-y-12 group hover:from-brand-mist hover:to-brand-copper/15 dark:hover:bg-brand-tan/10 transition-all duration-500 relative overflow-hidden">
+    <div className="bg-gradient-to-br from-brand-mist to-brand-sand/50 dark:from-brand-ink dark:to-brand-ink p-7 sm:p-12 md:p-16 space-y-8 sm:space-y-12 group hover:from-brand-mist hover:to-brand-copper/15 dark:hover:bg-brand-tan/10 transition-all duration-500 relative overflow-hidden">
       <div className="absolute inset-0 accent-gradient opacity-0 group-hover:opacity-40 dark:group-hover:opacity-10 transition-opacity" />
       <div className="text-brand-copper dark:text-brand-tan bg-brand-copper/15 dark:bg-brand-tan/10 p-4 w-fit rounded-2xl group-hover:scale-110 transition-transform relative z-10">
         {icon}
       </div>
       <div className="space-y-6 relative z-10">
-        <h3 className="text-4xl font-display italic tracking-tight">{title}</h3>
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-display italic tracking-tight text-pretty">{title}</h3>
         <p className="font-sans text-lg font-light leading-relaxed opacity-60 dark:text-brand-cream/80">
           {text}
         </p>

@@ -41,17 +41,17 @@ export function Footer() {
   const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
 
   return (
-    <footer className="mt-auto border-t editorial-border bg-brand-mist dark:bg-brand-ink px-6 lg:px-12 py-12 flex flex-col space-y-10">
-      <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-        <div className="w-full lg:w-1/4 space-y-8">
-          <Link to="/" aria-label="Adamas Materials Home" className="block max-w-[280px]">
+    <footer className="mt-auto border-t editorial-border bg-brand-mist dark:bg-brand-ink px-5 sm:px-6 lg:px-12 py-10 sm:py-12 flex flex-col space-y-8 sm:space-y-10">
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-10 sm:gap-12">
+        <div className="w-full lg:w-1/4 space-y-6 sm:space-y-8">
+          <Link to="/" aria-label="Adamas Materials Home" className="block max-w-[220px] sm:max-w-[280px]">
             <img
               src={theme === 'dark' ? logoDark : logoLight}
               alt="Adamas Materials"
               className="w-full h-auto object-contain"
             />
           </Link>
-          <p className="font-sans text-[10px] leading-relaxed text-body uppercase tracking-widest">
+          <p className="font-sans text-[10px] leading-relaxed text-body uppercase tracking-widest normal-case sm:uppercase">
             {t('footer.blurb')}
           </p>
           <div className="pt-4">

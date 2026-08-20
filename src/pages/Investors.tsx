@@ -7,16 +7,16 @@ export function Investors() {
   const { t } = useTranslation();
 
   return (
-    <div className="container mx-auto px-6 py-24">
+    <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title={t('nav.investors')} 
         description="Investor information for Adamas Materials — CVD diamond for industrial tooling, cooling, semiconductors, and research." 
         keywords="investor relations, cvd diamond, industrial tooling, thermal management, adamas materials"
       />
-      <div className="max-w-3xl space-y-16">
-        <div className="space-y-8">
-          <h1 className="text-6xl md:text-8xl font-display leading-[0.9]">{t('nav.investors')}</h1>
-          <p className="text-xl font-sans font-normal leading-relaxed text-body">
+      <div className="max-w-3xl space-y-12 sm:space-y-16">
+        <div className="space-y-6 sm:space-y-8">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display leading-[1.05] text-pretty">{t('nav.investors')}</h1>
+          <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed text-body">
             {t('investors.capitalText')}
           </p>
         </div>

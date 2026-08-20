@@ -5,24 +5,24 @@ import { TechnicalTerm } from '../components/TechnicalTerm';
 
 export function QualityProcess() {
   return (
-    <div className="container mx-auto px-6 py-24">
+    <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title="Quality & Process" 
         description="How Adamas Materials grows and checks CVD diamond for industrial and research use." 
         keywords="cvd diamond process, quality assurance, raman spectroscopy, diamond growth standards"
       />
-      <div className="max-w-6xl space-y-32">
-        <div className="max-w-3xl space-y-12">
+      <div className="max-w-6xl space-y-16 sm:space-y-24 md:space-y-32">
+        <div className="max-w-3xl space-y-8 sm:space-y-12">
           <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Process</span>
-          <h1 className="text-6xl md:text-8xl font-display leading-[0.9] italic">Quality &<br/><span className="not-italic font-bold">Process.</span></h1>
-          <p className="text-2xl font-sans font-light leading-relaxed opacity-80 italic dark:text-brand-cream/90">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display leading-[1.05] italic text-pretty">Quality &<br/><span className="not-italic font-bold">Process.</span></h1>
+          <p className="text-lg sm:text-2xl font-sans font-light leading-relaxed opacity-80 dark:text-brand-cream/90">
             We focus on CVD diamond growth and clear quality checks. Specs, documentation, and repeatable process control come first.
           </p>
         </div>
 
-        <section className="space-y-16">
-          <h2 className="text-3xl font-display font-bold uppercase tracking-tight border-b editorial-border pb-4">CVD Process</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-border dark:bg-brand-border-dark border editorial-border rounded-[3rem] overflow-hidden">
+        <section className="space-y-10 sm:space-y-16">
+          <h2 className="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight border-b editorial-border pb-4">CVD Process</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-border dark:bg-brand-border-dark border editorial-border rounded-[1.75rem] sm:rounded-[3rem] overflow-hidden">
             <ProcessCard 
               icon={<Layers className="h-8 w-8" />}
               title="CVD Growth"
@@ -38,7 +38,7 @@ export function QualityProcess() {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-24 items-start">
           <div className="space-y-12">
             <h2 className="text-3xl font-display font-bold uppercase tracking-tight border-b editorial-border pb-4">QA Checks</h2>
             <div className="space-y-8">
@@ -56,7 +56,7 @@ export function QualityProcess() {
               />
             </div>
           </div>
-          <div className="bg-brand-sand dark:bg-slate-900 border editorial-border p-12 rounded-[4rem] space-y-10">
+          <div className="bg-brand-sand dark:bg-slate-900 border editorial-border p-6 sm:p-10 md:p-12 rounded-[1.75rem] sm:rounded-[4rem] space-y-8 sm:space-y-10">
             <div className="space-y-4">
               <h3 className="text-[10px] uppercase font-sans font-extrabold tracking-[0.3em] text-brand-tan">Quality System</h3>
               <div className="flex items-baseline gap-4">
@@ -89,12 +89,12 @@ export function QualityProcess() {
 
 function ProcessCard({ icon, title, description, specs }: { icon: React.ReactNode, title: string, description: React.ReactNode, specs: string[] }) {
   return (
-    <div className="bg-gradient-to-br from-brand-mist to-brand-sand/60 dark:from-brand-ink dark:to-brand-ink p-16 space-y-10 group hover:to-brand-copper/20 dark:hover:bg-brand-tan/5 transition-all duration-500">
+    <div className="bg-gradient-to-br from-brand-mist to-brand-sand/60 dark:from-brand-ink dark:to-brand-ink p-7 sm:p-12 md:p-16 space-y-8 sm:space-y-10 group hover:to-brand-copper/20 dark:hover:bg-brand-tan/5 transition-all duration-500">
       <div className="text-brand-copper dark:text-brand-tan p-3 bg-brand-copper/15 dark:bg-brand-tan/10 w-fit rounded-xl group-hover:scale-110 transition-transform">
         {icon}
       </div>
       <div className="space-y-6">
-        <h3 className="text-3xl font-display italic tracking-tight">{title}</h3>
+        <h3 className="text-2xl sm:text-3xl font-display italic tracking-tight text-pretty">{title}</h3>
         <p className="font-sans text-lg font-light leading-relaxed opacity-60 dark:text-brand-cream/80">{description}</p>
         <div className="flex flex-wrap gap-3 pt-4">
           {specs.map((s, i) => (

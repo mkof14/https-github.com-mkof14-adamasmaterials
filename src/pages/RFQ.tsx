@@ -13,35 +13,35 @@ export function RFQ() {
   };
 
   return (
-    <div className="container mx-auto px-6 py-24">
+    <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title={t('nav.rfq')} 
         description="Request a quote for CVD diamond materials and technical solutions." 
         keywords="cvd diamond rfq, cutting tools quote, data center cooling diamond, semiconductor cvd inquiry"
       />
-      <div className="max-w-6xl flex flex-col lg:flex-row gap-24">
-        <div className="flex-1 space-y-12">
+      <div className="max-w-6xl flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24">
+        <div className="flex-1 space-y-10 sm:space-y-12">
           <div className="space-y-6">
             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Inquiry</span>
-            <h1 className="text-6xl font-display leading-tight italic truncate sm:overflow-visible text-pretty">Request for<br/><span className="not-italic font-bold">Proposal.</span></h1>
-            <p className="font-sans text-xl font-light opacity-60 leading-relaxed italic border-l-2 border-brand-tan pl-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-display leading-[1.05] italic text-pretty">Request for<br/><span className="not-italic font-bold">Proposal.</span></h1>
+            <p className="font-sans text-base sm:text-xl font-light opacity-60 leading-relaxed border-l-2 border-brand-tan pl-5 sm:pl-6">
               Tell us the application, target specs, and volume. We work with industrial and research customers on CVD diamond projects.
             </p>
           </div>
 
-          <div className="space-y-10 border-t editorial-border pt-12">
+          <div className="space-y-8 sm:space-y-10 border-t editorial-border pt-8 sm:pt-12">
             <div className="space-y-2">
               <p className="font-sans text-[10px] uppercase tracking-[0.3em] font-bold opacity-40">CHARLOTTE HQ</p>
-              <p className="font-display text-2xl font-medium tracking-tight">Charlotte, NC USA</p>
+              <p className="font-display text-xl sm:text-2xl font-medium tracking-tight">Charlotte, NC USA</p>
             </div>
             <div className="space-y-2">
               <p className="font-sans text-[10px] uppercase tracking-[0.3em] font-bold opacity-40">{t('rfq.communications')}</p>
-              <p className="font-display text-2xl font-medium tracking-tight">ops@adamasmaterials.com</p>
+              <p className="font-display text-lg sm:text-2xl font-medium tracking-tight break-all">ops@adamasmaterials.com</p>
             </div>
           </div>
         </div>
 
-        <div className="flex-1 glass-card p-12 lg:p-20 rounded-[4rem] border-brand-tan/20 shadow-2xl relative overflow-hidden group min-h-[600px] flex items-center">
+        <div className="flex-1 glass-card p-6 sm:p-10 lg:p-20 rounded-[1.75rem] sm:rounded-[4rem] border-brand-tan/20 shadow-2xl relative overflow-hidden group min-h-0 sm:min-h-[600px] flex items-center">
           <div className="absolute inset-0 surface-gradient opacity-20 pointer-events-none" />
           
           {submitted ? (

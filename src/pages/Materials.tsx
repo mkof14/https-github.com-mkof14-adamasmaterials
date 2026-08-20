@@ -15,36 +15,36 @@ export function Materials() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] prismatic-gradient rounded-full blur-[150px] opacity-50 dark:opacity-10 -mr-64 -mt-64" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-copper/20 dark:bg-transparent prismatic-gradient rounded-full blur-[150px] opacity-40 dark:opacity-10 -ml-64 -mb-64" />
 
-      <div className="container mx-auto px-6 py-24 relative z-10">
+      <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24 relative z-10">
         <SEO 
           title={t('nav.materials')} 
           description="CVD diamond materials for cutting tools, data center cooling, semiconductors, and research." 
           keywords="cvd diamond materials, cutting tool diamond, thermal diamond, semiconductor cvd, research diamond"
         />
         
-        <div className="max-w-7xl mx-auto space-y-24">
-          <div className="max-w-3xl space-y-12">
+        <div className="max-w-7xl mx-auto space-y-16 sm:space-y-24">
+          <div className="max-w-3xl space-y-8 sm:space-y-12">
             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('common.solutions')}</span>
-            <h1 className="text-6xl md:text-8xl font-display leading-[0.9] italic truncate sm:overflow-visible text-pretty">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display leading-[1.05] italic text-pretty">
               CVD<br/>
               <span className="not-italic font-bold bg-gradient-to-r from-brand-tan via-brand-ink to-brand-tan dark:from-brand-tan dark:via-brand-cream dark:to-brand-tan bg-clip-text text-transparent">Materials.</span>
             </h1>
-            <p className="text-2xl font-sans font-light leading-relaxed opacity-80 italic dark:text-brand-cream/90 border-l-4 border-brand-tan pl-8">
+            <p className="text-lg sm:text-2xl font-sans font-light leading-relaxed opacity-80 dark:text-brand-cream/90 border-l-4 border-brand-tan pl-5 sm:pl-8">
               CVD diamond for hardness and wear in tooling, heat sinks and spreaders for cooling, and materials for high-power electronics and research.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-10 md:gap-12">
             {materials.map((material, idx) => (
               <motion.div 
                 key={material.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="glass-card group flex flex-col md:flex-row rounded-[3rem] border-brand-tan/20 hover:border-brand-tan/50 transition-all duration-500 overflow-hidden diamond-shadow"
+                className="glass-card group flex flex-col md:flex-row rounded-[1.75rem] sm:rounded-[3rem] border-brand-tan/20 hover:border-brand-tan/50 transition-all duration-500 overflow-hidden diamond-shadow"
               >
                 {/* Material Info */}
-                <div className="flex-1 p-12 space-y-8 bg-brand-sand/60 dark:bg-brand-ink/50 backdrop-blur-md relative overflow-hidden">
+                <div className="flex-1 p-6 sm:p-10 md:p-12 space-y-6 sm:space-y-8 bg-brand-sand/60 dark:bg-brand-ink/50 backdrop-blur-md relative overflow-hidden">
                   <div className="absolute inset-0 prismatic-gradient opacity-10 pointer-events-none" />
                   <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-20 transition-all duration-700">
                     {idx === 0 && <Shield className="w-32 h-32 rotate-12" />}
@@ -57,7 +57,7 @@ export function Materials() {
                     <span className="font-sans text-[10px] uppercase tracking-[0.3em] font-bold text-brand-tan bg-brand-tan/10 px-3 py-1 rounded-full backdrop-blur-sm shadow-sm flex-shrink-0 w-fit">
                       {material.category} Grade
                     </span>
-                    <h2 className="text-4xl font-display italic tracking-tight">{material.name}</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-display italic tracking-tight text-pretty">{material.name}</h2>
                     <p className="font-sans text-lg font-light leading-relaxed opacity-80">
                       {material.description}
                     </p>
@@ -73,7 +73,7 @@ export function Materials() {
                 </div>
 
                 {/* Specifications Panel */}
-                <div className="w-full md:w-80 bg-brand-tan/5 dark:bg-brand-tan/10 p-12 flex flex-col justify-center gap-8 border-t md:border-t-0 md:border-l editorial-border relative overflow-hidden">
+                <div className="w-full md:w-80 bg-brand-tan/5 dark:bg-brand-tan/10 p-6 sm:p-10 md:p-12 flex flex-col justify-center gap-6 sm:gap-8 border-t md:border-t-0 md:border-l editorial-border relative overflow-hidden">
                   <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     <div className="absolute top-0 -left-full w-full h-full shimmer opacity-10 transition-all group-hover:left-full duration-1000" />
                   </div>

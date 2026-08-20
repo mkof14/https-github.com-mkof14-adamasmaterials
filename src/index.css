@@ -44,14 +44,15 @@ html.dark {
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
 
   body {
-    @apply font-sans antialiased text-brand-ink bg-brand-mist dark:text-brand-cream dark:bg-brand-ink transition-colors duration-1000;
+    @apply font-sans antialiased text-brand-ink bg-brand-mist dark:text-brand-cream dark:bg-brand-ink transition-colors duration-1000 overflow-x-clip;
   }
 
   h1, h2, h3, h4 {
-    @apply font-display tracking-tight font-bold text-brand-ink dark:text-brand-cream;
+    @apply font-display tracking-tight font-bold text-brand-ink dark:text-brand-cream text-balance;
   }
 }
 

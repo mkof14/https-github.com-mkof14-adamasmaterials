@@ -46,17 +46,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-brand-tan/25 dark:border-brand-border-dark bg-brand-mist/95 dark:bg-brand-ink/80 backdrop-blur-xl transition-all duration-500">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex h-20 items-center justify-between">
-          <Link to="/" className="flex items-center shrink-0" aria-label="Adamas Materials Home">
+        <div className="flex h-16 sm:h-20 items-center justify-between gap-3">
+          <Link to="/" className="flex items-center shrink-0 min-w-0 max-w-[58%] sm:max-w-none" aria-label="Adamas Materials Home">
             <img
               src={theme === 'dark' ? logoDark : logoLight}
               alt="Adamas Materials"
-              className="h-14 md:h-16 w-auto object-contain"
+              className="h-10 sm:h-12 md:h-14 w-auto max-w-full object-contain object-left"
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-12">
+          <nav className="hidden xl:flex items-center gap-8 2xl:gap-12">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -74,7 +74,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-6">
             {/* Lang Switcher */}
             <div className="relative">
               <button
@@ -131,7 +131,7 @@ export function Header() {
           </div>
 
           {/* Mobile Toggle */}
-          <div className="flex lg:hidden items-center gap-4">
+          <div className="flex xl:hidden items-center gap-1 sm:gap-2 shrink-0">
             <button 
               onClick={toggleTheme} 
               className="p-2"
@@ -160,28 +160,42 @@ export function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             id="mobile-navigation"
-            className="lg:hidden border-t border-slate-200 dark:border-slate-800 bg-brand-cream dark:bg-brand-ink overflow-hidden"
+            className="xl:hidden border-t border-slate-200 dark:border-slate-800 bg-brand-cream dark:bg-brand-ink overflow-hidden max-h-[calc(100dvh-4rem)] overflow-y-auto"
           >
-            <div className="container mx-auto px-6 py-12 flex flex-col gap-6 text-center">
+            <div className="container mx-auto px-6 py-8 sm:py-10 flex flex-col gap-5 text-center">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
                   aria-label={item.name}
-                  className="font-display italic text-3xl hover:text-brand-tan dark:text-brand-cream transition-colors"
+                  className="font-display italic text-2xl sm:text-3xl hover:text-brand-tan dark:text-brand-cream transition-colors"
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="h-px bg-brand-tan/20 px-12" />
-              <div className="flex flex-col gap-4 font-sans text-[10px] uppercase tracking-widest opacity-60">
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="font-display italic text-2xl sm:text-3xl hover:text-brand-tan dark:text-brand-cream transition-colors"
+              >
+                {t('nav.contact')}
+              </Link>
+              <Link
+                to="/rfq"
+                onClick={() => setIsOpen(false)}
+                className="font-sans text-[11px] uppercase tracking-[0.22em] font-bold text-brand-tan border-b border-brand-tan/40 pb-1 mx-auto"
+              >
+                {t('home.cta')}
+              </Link>
+              <div className="h-px bg-brand-tan/20" />
+              <div className="flex flex-col gap-3 font-sans text-[10px] uppercase tracking-widest opacity-60">
                 <Link to="/privacy" onClick={() => setIsOpen(false)}>{t('footer.privacy')}</Link>
                 <Link to="/terms" onClick={() => setIsOpen(false)}>{t('footer.terms')}</Link>
                 <Link to="/compliance" onClick={() => setIsOpen(false)}>{t('nav.compliance')}</Link>
               </div>
-              <div className="h-px bg-brand-tan/20 px-12" />
-              <div className="grid grid-cols-3 gap-4 px-6" role="menu">
+              <div className="h-px bg-brand-tan/20" />
+              <div className="grid grid-cols-3 gap-2 sm:gap-3" role="menu">
                 {languages.map((l) => (
                   <button
                     key={l.code}
@@ -189,11 +203,11 @@ export function Header() {
                     role="menuitem"
                     aria-label={`Switch language to ${l.code.toUpperCase()}`}
                     className={cn(
-                      "flex flex-col items-center gap-2 p-3 rounded-2xl transition-all",
+                      "flex flex-col items-center gap-1.5 p-2.5 sm:p-3 rounded-xl transition-all",
                       i18n.language === l.code ? "bg-brand-tan/10 text-brand-tan" : "hover:bg-brand-tan/5"
                     )}
                   >
-                    <span className="text-2xl">{l.flag}</span>
+                    <span className="text-xl sm:text-2xl">{l.flag}</span>
                     <span className="text-[10px] uppercase font-mono font-bold tracking-tighter">{l.code}</span>
                   </button>
                 ))}

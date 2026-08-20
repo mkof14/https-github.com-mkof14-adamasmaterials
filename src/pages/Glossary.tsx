@@ -15,18 +15,18 @@ export function Glossary() {
   );
 
   return (
-    <div className="container mx-auto px-6 py-24">
+    <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title="Technical Glossary" 
         description="Short glossary of CVD diamond and related technical terms used by Adamas Materials." 
         keywords="cvd glossary, chemical vapor deposition, heat spreader, cutting insert, raman spectroscopy"
       />
-      <div className="max-w-4xl mx-auto space-y-16">
+      <div className="max-w-4xl mx-auto space-y-10 sm:space-y-16">
         {/* Header */}
-        <div className="space-y-6">
+        <div className="space-y-5 sm:space-y-6">
           <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Reference</span>
-          <h1 className="text-5xl md:text-7xl font-display leading-[0.9] italic">Technical<br/><span className="not-italic font-bold">Glossary.</span></h1>
-          <p className="text-xl font-sans font-light leading-relaxed opacity-60 italic max-w-2xl">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display leading-[1.05] italic text-pretty">Technical<br/><span className="not-italic font-bold">Glossary.</span></h1>
+          <p className="text-base sm:text-xl font-sans font-light leading-relaxed opacity-60 max-w-2xl">
             Short definitions for CVD diamond and the applications we support.
           </p>
         </div>
@@ -54,7 +54,7 @@ export function Glossary() {
                 whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="glass-card p-10 rounded-[2.5rem] border-brand-tan/10 hover:border-brand-tan/40 hover:shadow-2xl hover:shadow-brand-tan/5 transition-all duration-500 group relative overflow-hidden"
+                className="glass-card p-6 sm:p-10 rounded-[1.5rem] sm:rounded-[2.5rem] border-brand-tan/10 hover:border-brand-tan/40 hover:shadow-2xl hover:shadow-brand-tan/5 transition-all duration-500 group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-tan/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
                 <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-16 relative z-10">
