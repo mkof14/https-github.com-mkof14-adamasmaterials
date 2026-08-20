@@ -2,19 +2,54 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FBF9F7" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="CVD materials for cutting tools, heat sinks and heat spreaders, semiconductors, universities, and technical solutions. Charlotte, NC."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://www.adamasmaterials.com/" />
+
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a0a0a" />
-    <title>Adamas Materials</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Adamas" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Adamas Materials" />
+    <meta property="og:title" content="Adamas Materials | Materials for Heat, Power and Precision" />
+    <meta
+      property="og:description"
+      content="CVD materials for cutting tools, data-center cooling, semiconductors, and research."
+    />
+    <meta property="og:url" content="https://www.adamasmaterials.com/" />
+    <meta property="og:image" content="https://www.adamasmaterials.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Adamas Materials | Materials for Heat, Power and Precision" />
+    <meta
+      name="twitter:description"
+      content="CVD materials for cutting tools, data-center cooling, semiconductors, and research."
+    />
+    <meta name="twitter:image" content="https://www.adamasmaterials.com/og-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/hero-poster.jpg" fetchpriority="high" />
+
+    <title>Adamas Materials | Materials for Heat, Power and Precision</title>
     <script>
-      (function() {
+      (function () {
         try {
-          // Prefer light by default so the first paint isn't a black void.
           if (localStorage.getItem('themeForcedLight') !== '1') {
             localStorage.setItem('theme', 'light');
             localStorage.setItem('themeForcedLight', '1');

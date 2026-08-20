@@ -1,0 +1,33 @@
+ADAMAS MATERIALS — CVD for Semiconductors
+========================================
+Grade line: Semiconductor
+Process: CVD
+HQ: Charlotte, NC, USA
+Contact: rd@adamasmaterials.com | RFQ: https://www.adamasmaterials.com/rfq
+
+Overview
+--------
+CVD materials for substrates and high-power electronics. Wide bandgap, high
+carrier mobility, and strong heat handling versus Si and SiC in demanding cases.
+
+Typical specifications (starting points — final grade follows RFQ)
+------------------------------------------------------------------
+Process                 CVD
+Use cases               RF, optoelectronics, power
+Form                    Wafers / thermal parts
+Supply                  Prototype to production
+
+Applications
+------------
+- RF amplifiers
+- Power devices
+- Laser diodes / LEDs
+- Die-attach & test
+
+What to include in an RFQ
+-------------------------
+Device type, thermal or substrate role, size and finish, process constraints,
+test needs, and volume from prototype to production.
+
+Document: AM-DS-SEMI-EN | 2026-08
+Adamas Materials — industrial and research supply only. Not for jewelry or consumer use.

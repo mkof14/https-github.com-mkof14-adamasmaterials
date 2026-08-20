@@ -74,8 +74,10 @@ export function Footer() {
             <Link to="/quality" className="opacity-90 hover:text-brand-tan transition-colors whitespace-nowrap">{t('nav.quality')}</Link>
             <Link to="/glossary" className="opacity-90 hover:text-brand-tan transition-colors whitespace-nowrap">{t('nav.glossary')}</Link>
             <Link to="/applications" className="opacity-90 hover:text-brand-tan transition-colors whitespace-nowrap">{t('nav.applications')}</Link>
-            <Link to="/contact" className="opacity-90 hover:text-brand-tan transition-colors whitespace-nowrap">Contact</Link>
-            <Link to="/rfq" className="opacity-90 hover:text-brand-tan transition-colors whitespace-nowrap">RFQ</Link>
+            <Link to="/materials" className="opacity-90 hover:text-brand-tan transition-colors whitespace-nowrap">{t('nav.materials')}</Link>
+            <Link to="/downloads" className="opacity-90 hover:text-brand-tan transition-colors whitespace-nowrap">{t('footer.downloads')}</Link>
+            <Link to="/contact" className="opacity-90 hover:text-brand-tan transition-colors whitespace-nowrap">{t('nav.contact')}</Link>
+            <Link to="/rfq" className="opacity-90 hover:text-brand-tan transition-colors whitespace-nowrap">{t('nav.rfq')}</Link>
           </div>
           
           <div className="flex flex-col space-y-3">

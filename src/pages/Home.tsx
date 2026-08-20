@@ -1,12 +1,26 @@
 import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
-import { Microscope, Target, Zap, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { APP_MARKS, APP_ACCENTS, type AppMarkKey } from '../components/AppMarks';
 
 export function Home() {
   const { t } = useTranslation();
+
+  const positioning: { accent: AppMarkKey; title: string; text: string }[] = [
+    { accent: 'technical', title: t('positioning.scientificTitle'), text: t('positioning.scientificText') },
+    { accent: 'tooling', title: t('positioning.noConsumerTitle'), text: t('positioning.noConsumerText') },
+    { accent: 'cooling', title: t('positioning.rfqTitle'), text: t('positioning.rfqText') },
+  ];
+
+  const categories: { accent: AppMarkKey; label: string }[] = [
+    { accent: 'tooling', label: t('home.categories.tooling') },
+    { accent: 'cooling', label: t('home.categories.cooling') },
+    { accent: 'semiconductors', label: t('home.categories.semiconductors') },
+    { accent: 'universities', label: t('home.categories.universities') },
+  ];
 
   return (
     <div className="flex flex-col">
@@ -55,8 +69,13 @@ export function Home() {
 
       {/* Positioning */}
       <section className="py-16 sm:py-24 lg:py-32 bg-brand-cream dark:bg-brand-ink relative overflow-hidden border-b editorial-border">
-        <div className="absolute top-0 right-0 w-96 h-96 prismatic-gradient rounded-full blur-[120px] opacity-15 dark:opacity-10 -mr-48 -mt-48" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-stone/30 dark:bg-brand-prismatic-cyan/5 rounded-full blur-[120px] opacity-20 -ml-48 -mb-48" />
+        <div className="absolute inset-0 crystalline-bg pointer-events-none opacity-60" />
+        <motion.div
+          aria-hidden
+          className="pointer-events-none absolute -top-24 right-[-10%] h-[28rem] w-[28rem] rounded-full blur-[100px] bg-[#8A6540]/14 dark:bg-[#C4A078]/10"
+          animate={{ opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        />
         <div className="container mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 sm:mb-16 lg:mb-20 gap-6 sm:gap-8">
             <div className="max-w-2xl space-y-3 sm:space-y-4">
@@ -68,22 +87,15 @@ export function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10 md:gap-12">
-            <FeatureCard 
-              icon={<Microscope className="h-6 w-6" />}
-              title={t('positioning.scientificTitle')}
-              text={t('positioning.scientificText')}
-            />
-            <FeatureCard 
-              icon={<Target className="h-6 w-6" />}
-              title={t('positioning.noConsumerTitle')}
-              text={t('positioning.noConsumerText')}
-            />
-            <FeatureCard 
-              icon={<Zap className="h-6 w-6" />}
-              title={t('positioning.rfqTitle')}
-              text={t('positioning.rfqText')}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+            {positioning.map((item) => (
+              <FeatureCard
+                key={item.title}
+                accent={item.accent}
+                title={item.title}
+                text={item.text}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -97,17 +109,19 @@ export function Home() {
               {t('home.solutionText')}
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 pt-4 sm:pt-8">
-              {[
-                t('home.categories.tooling'),
-                t('home.categories.cooling'),
-                t('home.categories.semiconductors'),
-                t('home.categories.universities')
-              ].map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center gap-3 sm:gap-4 group">
-                  <div className="h-0.5 w-6 bg-brand-tan group-hover:w-10 transition-all duration-500" />
-                  <span className="font-sans text-[10px] uppercase tracking-[0.2em] font-semibold dark:text-brand-cream text-center leading-snug">{item}</span>
-                </div>
-              ))}
+              {categories.map((item) => {
+                const accent = APP_ACCENTS[item.accent];
+                const Mark = APP_MARKS[item.accent];
+                return (
+                  <div key={item.label} className="flex flex-col items-center gap-3 sm:gap-4 group">
+                    <div className={`relative h-12 w-12 flex items-center justify-center border border-current/15 ${accent.mark} bg-white/50 dark:bg-brand-ink/40`}>
+                      <Mark className="h-6 w-6" />
+                    </div>
+                    <div className={`h-0.5 w-6 ${accent.rail} group-hover:w-10 transition-all duration-500`} />
+                    <span className={`font-sans text-[10px] uppercase tracking-[0.2em] font-semibold text-center leading-snug ${accent.num}`}>{item.label}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -290,19 +304,30 @@ function FaqSection() {
   );
 }
 
-function FeatureCard({ icon, title, text }: { icon: React.ReactNode, title: string, text: string }) {
+function FeatureCard({
+  accent,
+  title,
+  text,
+}: {
+  accent: AppMarkKey;
+  title: string;
+  text: string;
+  key?: React.Key;
+}) {
+  const a = APP_ACCENTS[accent];
+  const Mark = APP_MARKS[accent];
   return (
-    <div className="p-6 sm:p-8 md:p-10 border editorial-border glass-card space-y-6 sm:space-y-8 flex flex-col items-start hover:border-brand-tan/40 transition-all duration-500 rounded-[1.5rem] sm:rounded-[3rem]">
-      <div className="text-brand-tan p-3 sm:p-4 bg-brand-tan/10 rounded-xl sm:rounded-2xl">
-        {icon}
+    <div className="group relative overflow-hidden p-6 sm:p-8 border editorial-border rounded-[1.25rem] bg-gradient-to-br from-brand-cream/90 via-brand-mist/80 to-brand-sand/40 dark:from-brand-charcoal/70 dark:via-brand-ink/80 dark:to-brand-charcoal/40 backdrop-blur-md space-y-6 flex flex-col items-start">
+      <div className={`absolute inset-0 bg-gradient-to-br ${a.wash} opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+      <div className={`absolute left-0 top-0 bottom-0 w-1 ${a.rail} opacity-70`} />
+      <div className={`relative z-10 h-14 w-14 flex items-center justify-center border border-current/15 ${a.mark} bg-white/55 dark:bg-brand-ink/50`}>
+        <Mark className="h-7 w-7" />
       </div>
-      <div className="space-y-3 sm:space-y-4">
-        <h3 className="text-xl sm:text-2xl font-display italic tracking-tight text-pretty">{title}</h3>
-        <p className="text-sm font-sans font-normal leading-relaxed text-body">
-          {text}
-        </p>
+      <div className="relative z-10 space-y-3">
+        <h3 className={`text-xl sm:text-2xl font-display tracking-tight text-pretty ${a.num}`}>{title}</h3>
+        <p className="text-sm font-sans font-normal leading-relaxed text-body">{text}</p>
       </div>
-      <div className="h-px w-12 bg-brand-tan/40 mt-auto" />
+      <div className={`relative z-10 h-px w-12 ${a.rail} mt-auto`} />
     </div>
   );
 }

@@ -1,0 +1,32 @@
+ADAMAS MATERIALS — CVD for Research & Custom Work
+================================================
+Grade line: Research
+Process: CVD
+HQ: Charlotte, NC, USA
+Contact: rd@adamasmaterials.com | RFQ: https://www.adamasmaterials.com/rfq
+
+Overview
+--------
+Custom CVD materials for universities and engineering teams studying thermal,
+electronic, and materials performance.
+
+Typical specifications (starting points — final grade follows RFQ)
+------------------------------------------------------------------
+Process                 CVD
+Scope                   Custom specs
+Support                 Technical collaboration
+Volume                  Lab to pilot
+
+Applications
+------------
+- University labs
+- Substrate studies
+- Pilot thermal projects
+
+What to include in an RFQ
+-------------------------
+Research goal, sample size, measurement methods, documentation needs,
+and whether the lot is lab-only or early pilot.
+
+Document: AM-DS-RESEARCH-EN | 2026-08
+Adamas Materials — industrial and research supply only. Not for jewelry or consumer use.

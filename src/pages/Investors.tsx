@@ -1,38 +1,61 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { APP_MARKS, type AppMarkKey } from '../components/AppMarks';
+import { PageShell, PageHeader, AccentPanel, PageCta } from '../components/page/PageShell';
+
+const INV_SECTIONS: { id: string; titleKey: string; textKey: string; accent: AppMarkKey }[] = [
+  { id: 'inv-focus', titleKey: 'investors.growthMetrics', textKey: 'investors.focusText', accent: 'tooling' },
+  { id: 'inv-markets', titleKey: 'investors.revenueTrajectory', textKey: 'investors.marketsText', accent: 'cooling' },
+  { id: 'inv-capacity', titleKey: 'investors.capexEfficiency', textKey: 'investors.capitalText', accent: 'technical' },
+  { id: 'inv-access', titleKey: 'investors.portal', textKey: 'investors.accessText', accent: 'universities' },
+];
 
 export function Investors() {
   const { t } = useTranslation();
 
-  return (
-    <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
-      <SEO 
-        title={t('nav.investors')} 
-        description="Investor information for Adamas Materials — CVD materials for industrial tooling, cooling, semiconductors, and research." 
-        keywords="investor relations, cvd materials, industrial tooling, thermal management, adamas materials"
-      />
-      <div className="max-w-3xl space-y-12 sm:space-y-16">
-        <div className="space-y-6 sm:space-y-8">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display leading-[1.05] text-pretty">{t('nav.investors')}</h1>
-          <p className="text-lg sm:text-xl font-sans font-normal leading-relaxed text-body">
-            {t('investors.capitalText')}
-          </p>
-        </div>
+  const sections = INV_SECTIONS.map((s, idx) => ({
+    ...s,
+    title: t(s.titleKey),
+    text: t(s.textKey),
+    Mark: APP_MARKS[s.accent],
+    index: String(idx + 1).padStart(2, '0'),
+  }));
 
-        <div className="space-y-4 border-t editorial-border pt-10">
-          <p className="font-sans text-sm text-body max-w-md">
-            {t('investors.confidential')}
-          </p>
-          <Link
-            to="/rfq"
-            className="inline-block text-brand-tan font-sans text-[10px] uppercase tracking-widest font-bold border-b border-brand-tan/40 pb-1 hover:border-brand-tan transition-colors"
+  return (
+    <PageShell
+      seo={
+        <SEO
+          title={t('nav.investors')}
+          description="Investor information for Adamas Materials — CVD materials for industrial tooling, cooling, semiconductors, and research."
+          keywords="investor relations, cvd materials, industrial tooling, thermal management, adamas materials"
+        />
+      }
+    >
+      <PageHeader
+        label={t('investors.stewardship')}
+        title={t('nav.investors')}
+        titleAccent={t('investors.capitalManagement')}
+        intro={t('investors.intro')}
+        chips={sections.map((s) => ({ href: `#${s.id}`, label: s.title, accentKey: s.accent }))}
+      />
+
+      <div className="space-y-6 sm:space-y-7">
+        {sections.map((section) => (
+          <AccentPanel
+            key={section.id}
+            id={section.id}
+            index={section.index}
+            title={section.title}
+            accentKey={section.accent}
+            Mark={section.Mark}
           >
-            {t('investors.requestAccess')}
-          </Link>
-        </div>
+            <p>{section.text}</p>
+          </AccentPanel>
+        ))}
       </div>
-    </div>
+
+      <PageCta note={t('investors.confidential')} />
+    </PageShell>
   );
 }

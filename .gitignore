@@ -8,3 +8,5 @@ coverage/
 !.env.example
 .numba_cache/
 .vercel
+public/hero-source.mp4
+assets-source/

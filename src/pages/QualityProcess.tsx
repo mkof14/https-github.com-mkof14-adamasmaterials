@@ -1,123 +1,85 @@
 import React from 'react';
-import { ShieldCheck, Activity, Layers } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { SEO } from '../components/SEO';
 import { TechnicalTerm } from '../components/TechnicalTerm';
+import { APP_MARKS } from '../components/AppMarks';
+import { PageShell, PageHeader, AccentPanel, PageCta } from '../components/page/PageShell';
 
 export function QualityProcess() {
+  const { t } = useTranslation();
+
   return (
-    <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
-      <SEO 
-        title="Quality & Process" 
-        description="How Adamas Materials grows and checks CVD materials for industrial and research use." 
-        keywords="cvd materials process, quality assurance, raman spectroscopy, cvd growth standards"
+    <PageShell
+      seo={
+        <SEO
+          title={t('nav.quality')}
+          description="How Adamas Materials grows and checks CVD materials for industrial and research use."
+          keywords="cvd materials process, quality assurance, raman spectroscopy, cvd growth standards"
+        />
+      }
+    >
+      <PageHeader
+        label={t('qualityPage.label')}
+        title={t('qualityPage.title')}
+        titleAccent={t('qualityPage.accent')}
+        intro={t('qualityPage.intro')}
+        chips={[
+          { href: '#qp-growth', label: t('qualityPage.growthTitle'), accentKey: 'technical' },
+          { href: '#qp-fit', label: t('qualityPage.fitTitle'), accentKey: 'tooling' },
+          { href: '#qp-checks', label: t('qualityPage.checksTitle'), accentKey: 'cooling' },
+          { href: '#qp-system', label: t('qualityPage.systemTitle'), accentKey: 'universities' },
+        ]}
       />
-      <div className="max-w-6xl space-y-16 sm:space-y-24 md:space-y-32">
-        <div className="max-w-3xl space-y-8 sm:space-y-12">
-          <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Process</span>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display leading-[1.05] italic text-pretty">Quality &<br/><span className="not-italic font-bold">Process.</span></h1>
-          <p className="text-lg sm:text-2xl font-sans font-light leading-relaxed opacity-80 dark:text-brand-cream/90">
-            We focus on CVD materials growth and clear quality checks. Specs, documentation, and repeatable process control come first.
+
+      <div className="space-y-6 sm:space-y-7">
+        <AccentPanel
+          id="qp-growth"
+          index="01"
+          title={t('qualityPage.growthTitle')}
+          accentKey="technical"
+          Mark={APP_MARKS.technical}
+          tags={['CVD', 'Grade control', 'Custom specs']}
+        >
+          <p>
+            <TechnicalTerm term="CVD">{t('qualityPage.growthText')}</TechnicalTerm>
           </p>
-        </div>
+        </AccentPanel>
 
-        <section className="space-y-10 sm:space-y-16">
-          <h2 className="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight border-b editorial-border pb-4">CVD Process</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-border dark:bg-brand-border-dark border editorial-border rounded-[1.75rem] sm:rounded-[3rem] overflow-hidden">
-            <ProcessCard 
-              icon={<Layers className="h-8 w-8" />}
-              title="CVD Growth"
-              description={<>Chemical Vapor Deposition (<TechnicalTerm term="CVD">CVD</TechnicalTerm>) grows film from a process gas under controlled conditions. This is our core method for tooling, thermal, semiconductor, and research grades.</>}
-              specs={["CVD only", "Grade control", "Custom specs"]}
-            />
-            <ProcessCard 
-              icon={<ShieldCheck className="h-8 w-8" />}
-              title="Application Fit"
-              description={<>We match grade and form to the job: wear-resistant cutting tools, heat sinks and spreaders for data centers and power electronics, semiconductor parts, and university samples.</>}
-              specs={["Hardness", "Heat spreading", "Semiconductors", "Research"]}
-            />
-          </div>
-        </section>
+        <AccentPanel
+          id="qp-fit"
+          index="02"
+          title={t('qualityPage.fitTitle')}
+          accentKey="tooling"
+          Mark={APP_MARKS.tooling}
+          tags={['Hardness', 'Heat spreading', 'Semiconductors', 'Research']}
+        >
+          <p>{t('qualityPage.fitText')}</p>
+        </AccentPanel>
 
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-24 items-start">
-          <div className="space-y-12">
-            <h2 className="text-3xl font-display font-bold uppercase tracking-tight border-b editorial-border pb-4">QA Checks</h2>
-            <div className="space-y-8">
-              <ProtocolItem 
-                title="Spectroscopic Checks"
-                text={<>Batches can be checked with <TechnicalTerm term="Raman Spectroscopy">Raman</TechnicalTerm> and related methods to confirm crystal quality and process consistency.</>}
-              />
-              <ProtocolItem 
-                title={<TechnicalTerm term="AFM">Surface Checks</TechnicalTerm>}
-                text={<><TechnicalTerm term="AFM">AFM</TechnicalTerm> and finish measurements are used when surface roughness matters for the application.</>}
-              />
-              <ProtocolItem 
-                title="Batch Records"
-                text="Growth and inspection records are kept so production and research lots stay traceable."
-              />
-            </div>
-          </div>
-          <div className="bg-brand-sand dark:bg-slate-900 border editorial-border p-6 sm:p-10 md:p-12 rounded-[1.75rem] sm:rounded-[4rem] space-y-8 sm:space-y-10">
-            <div className="space-y-4">
-              <h3 className="text-[10px] uppercase font-sans font-extrabold tracking-[0.3em] text-brand-tan">Quality System</h3>
-              <div className="flex items-baseline gap-4">
-                <span className="text-5xl font-display font-bold">ISO</span>
-                <span className="text-2xl font-display italic">9001</span>
-              </div>
-              <p className="text-sm font-sans font-light opacity-60 leading-relaxed">
-                Our Charlotte facility follows a structured quality management approach for industrial and research supply.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-[10px] uppercase font-sans font-extrabold tracking-[0.3em] text-brand-tan">Process Focus</h3>
-              <div className="grid grid-cols-2 gap-8 pt-4">
-                <div className="space-y-1">
-                  <span className="text-3xl font-display font-bold">CVD</span>
-                  <p className="text-[9px] uppercase tracking-widest opacity-40">Core method</p>
-                </div>
-                <div className="space-y-1">
-                  <span className="text-3xl font-display font-bold">Spec</span>
-                  <p className="text-[9px] uppercase tracking-widest opacity-40">Driven supply</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  );
-}
+        <AccentPanel
+          id="qp-checks"
+          index="03"
+          title={t('qualityPage.checksTitle')}
+          accentKey="cooling"
+          Mark={APP_MARKS.cooling}
+          tags={['Raman', 'AFM', 'Batch records']}
+        >
+          <p>{t('qualityPage.checksText')}</p>
+        </AccentPanel>
 
-function ProcessCard({ icon, title, description, specs }: { icon: React.ReactNode, title: string, description: React.ReactNode, specs: string[] }) {
-  return (
-    <div className="bg-gradient-to-br from-brand-mist to-brand-sand/60 dark:from-brand-ink dark:to-brand-ink p-7 sm:p-12 md:p-16 space-y-8 sm:space-y-10 group hover:to-brand-copper/20 dark:hover:bg-brand-tan/5 transition-all duration-500">
-      <div className="text-brand-copper dark:text-brand-tan p-3 bg-brand-copper/15 dark:bg-brand-tan/10 w-fit rounded-xl group-hover:scale-110 transition-transform">
-        {icon}
+        <AccentPanel
+          id="qp-system"
+          index="04"
+          title={t('qualityPage.systemTitle')}
+          accentKey="universities"
+          Mark={APP_MARKS.universities}
+          tags={['ISO 9001', 'CVD', 'Spec-driven']}
+        >
+          <p>{t('qualityPage.systemText')}</p>
+        </AccentPanel>
       </div>
-      <div className="space-y-6">
-        <h3 className="text-2xl sm:text-3xl font-display italic tracking-tight text-pretty">{title}</h3>
-        <p className="font-sans text-lg font-light leading-relaxed opacity-60 dark:text-brand-cream/80">{description}</p>
-        <div className="flex flex-wrap gap-3 pt-4">
-          {specs.map((s, i) => (
-            <TechnicalTerm key={i} term={s}>
-              <span className="px-4 py-1.5 border border-brand-copper/25 dark:border-brand-tan/20 rounded-full font-sans text-[9px] uppercase font-bold tracking-widest text-brand-copper dark:text-brand-tan bg-brand-copper/10 dark:bg-brand-tan/5">
-                {s}
-              </span>
-            </TechnicalTerm>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
-function ProtocolItem({ title, text }: { title: React.ReactNode, text: React.ReactNode }) {
-  return (
-    <div className="space-y-3 group">
-      <div className="flex items-center gap-4">
-        <div className="h-px w-8 bg-brand-tan group-hover:w-12 transition-all" />
-        <h3 className="text-xl font-display font-bold">{title}</h3>
-      </div>
-      <p className="font-sans text-sm font-light leading-relaxed opacity-60 pl-12">{text}</p>
-    </div>
+      <PageCta />
+    </PageShell>
   );
 }

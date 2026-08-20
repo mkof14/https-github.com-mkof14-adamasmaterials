@@ -1,0 +1,32 @@
+ADAMAS MATERIALS — CVD for Cutting Tools
+========================================
+Grade line: Tooling
+Process: CVD
+HQ: Charlotte, NC, USA
+Contact: ops@adamasmaterials.com | RFQ: https://www.adamasmaterials.com/rfq
+
+Overview
+--------
+CVD materials for cutting inserts, blanks, and wear parts. Extreme hardness
+(up to ~100 GPa) and wear resistance for precision machining and long edge life.
+
+Typical specifications (starting points — final grade follows RFQ)
+------------------------------------------------------------------
+Process                 CVD
+Hardness                Up to ~100 GPa
+Thermal conductivity    High
+Form                    Blanks / coated solutions
+
+Applications
+------------
+- Cutting inserts
+- Precision machining
+- Wear parts
+
+What to include in an RFQ
+-------------------------
+Application, insert geometry or blank size, target hardness / wear life,
+coating stack if any, volume (pilot or series), and timeline.
+
+Document: AM-DS-TOOLING-EN | 2026-08
+Adamas Materials — industrial and research supply only. Not for jewelry or consumer use.

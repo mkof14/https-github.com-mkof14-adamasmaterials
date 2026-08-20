@@ -1,0 +1,33 @@
+ADAMAS MATERIALS — CVD for Thermal Management
+=============================================
+Grade line: Cooling
+Process: CVD
+HQ: Charlotte, NC, USA
+Contact: ops@adamasmaterials.com | RFQ: https://www.adamasmaterials.com/rfq
+
+Overview
+--------
+Heat sinks and heat spreaders with high thermal conductivity and low thermal
+expansion — for chips, data centers, GaN devices, and power electronics.
+
+Typical specifications (starting points — final grade follows RFQ)
+------------------------------------------------------------------
+Process                 CVD
+Thermal conductivity    Very high
+Thermal expansion       Low
+Form                    Plates / custom shapes
+
+Applications
+------------
+- Data center cooling
+- Chip heat sinks
+- GaN / LED / RF thermal
+- Power electronics
+
+What to include in an RFQ
+-------------------------
+Duty cycle, interface materials, target thermal path, plate size/thickness,
+volume, and packaging or cleanliness requirements.
+
+Document: AM-DS-THERMAL-EN | 2026-08
+Adamas Materials — industrial and research supply only. Not for jewelry or consumer use.

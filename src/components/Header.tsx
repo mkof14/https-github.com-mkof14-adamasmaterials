@@ -31,16 +31,24 @@ export function Header() {
   const changeLanguage = (code: string, dir: string = 'ltr') => {
     i18n.changeLanguage(code);
     document.documentElement.dir = dir;
+    document.documentElement.lang = code;
     setLangOpen(false);
   };
 
   const navItems = [
     { name: t('nav.home'), path: '/' },
     { name: t('nav.about'), path: '/about' },
-    { name: t('nav.investors'), path: '/investors' },
     { name: t('nav.materials'), path: '/materials' },
     { name: t('nav.capabilities'), path: '/capabilities' },
     { name: t('nav.applications'), path: '/applications' },
+    { name: t('nav.investors'), path: '/investors' },
+  ];
+
+  const mobileExtra = [
+    { name: t('nav.quality'), path: '/quality' },
+    { name: t('nav.glossary'), path: '/glossary' },
+    { name: t('footer.downloads'), path: '/downloads' },
+    { name: t('nav.contact'), path: '/contact' },
   ];
 
   return (
@@ -174,13 +182,16 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="font-display italic text-2xl sm:text-3xl hover:text-brand-tan dark:text-brand-cream transition-colors"
-              >
-                {t('nav.contact')}
-              </Link>
+              {mobileExtra.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className="font-display italic text-xl sm:text-2xl text-body hover:text-brand-tan dark:text-brand-cream transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
               <Link
                 to="/rfq"
                 onClick={() => setIsOpen(false)}

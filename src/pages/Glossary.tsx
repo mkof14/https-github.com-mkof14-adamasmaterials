@@ -1,91 +1,101 @@
 import React, { useState } from 'react';
-import { Search, Book } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 import { SEO } from '../components/SEO';
-
 import { GLOSSARY_TERMS } from '../data/glossary';
+import { APP_ACCENTS, type AppMarkKey } from '../components/AppMarks';
+import { PageShell, PageHeader, PageCta } from '../components/page/PageShell';
+
+const CATEGORY_ACCENT: Record<string, AppMarkKey> = {
+  Synthesis: 'technical',
+  Applications: 'cooling',
+  'Materials Science': 'tooling',
+  Metrology: 'semiconductors',
+  Characterization: 'semiconductors',
+  General: 'universities',
+};
 
 export function Glossary() {
-  const [search, setSearch] = useState("");
+  const { t } = useTranslation();
+  const [search, setSearch] = useState('');
 
-  const filteredTerms = GLOSSARY_TERMS.filter(item => 
-    item.term.toLowerCase().includes(search.toLowerCase()) || 
-    item.definition.toLowerCase().includes(search.toLowerCase()) ||
-    item.category.toLowerCase().includes(search.toLowerCase())
+  const filteredTerms = GLOSSARY_TERMS.filter(
+    (item) =>
+      item.term.toLowerCase().includes(search.toLowerCase()) ||
+      item.definition.toLowerCase().includes(search.toLowerCase()) ||
+      item.category.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
-      <SEO 
-        title="Technical Glossary" 
-        description="Short glossary of CVD materials and related technical terms used by Adamas Materials." 
-        keywords="cvd glossary, chemical vapor deposition, heat spreader, cutting insert, raman spectroscopy"
+    <PageShell
+      seo={
+        <SEO
+          title="Technical Glossary"
+          description="Short glossary of CVD materials and related technical terms used by Adamas Materials."
+          keywords="cvd glossary, chemical vapor deposition, heat spreader, cutting insert, raman spectroscopy"
+        />
+      }
+    >
+      <PageHeader
+        label={t('glossaryPage.label')}
+        title={t('glossaryPage.title')}
+        titleAccent={t('glossaryPage.accent')}
+        intro={t('glossaryPage.intro')}
       />
-      <div className="max-w-4xl mx-auto space-y-10 sm:space-y-16">
-        {/* Header */}
-        <div className="space-y-5 sm:space-y-6">
-          <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Reference</span>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display leading-[1.05] italic text-pretty">Technical<br/><span className="not-italic font-bold">Glossary.</span></h1>
-          <p className="text-base sm:text-xl font-sans font-light leading-relaxed opacity-60 max-w-2xl">
-            Short definitions for CVD materials and the applications we support.
-          </p>
-        </div>
 
-        {/* Search Bar */}
-        <div className="relative">
-          <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-brand-tan" />
-          <input 
-            type="text"
-            placeholder="Search terminology..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-brand-tan/5 border border-brand-tan/20 rounded-2xl py-6 pl-16 pr-8 font-sans text-lg focus:outline-none focus:border-brand-tan/50 transition-all shadow-inner"
-          />
-        </div>
+      <div className="relative">
+        <input
+          type="text"
+          placeholder={t('glossaryPage.search')}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full bg-white/50 dark:bg-white/5 border editorial-border rounded-[1rem] py-4 sm:py-5 pl-5 sm:pl-6 pr-5 font-sans text-base sm:text-lg focus:outline-none focus:border-[#8A6540]/50 dark:focus:border-[#C4A078]/50 transition-colors"
+        />
+      </div>
 
-        {/* Glossary List */}
-        <div className="grid grid-cols-1 gap-6">
-          <AnimatePresence mode='popLayout'>
-            {filteredTerms.map((item, idx) => (
-              <motion.div
+      <div className="space-y-4 sm:space-y-5">
+        <AnimatePresence mode="popLayout">
+          {filteredTerms.map((item) => {
+            const accentKey = CATEGORY_ACCENT[item.category] ?? 'technical';
+            const accent = APP_ACCENTS[accentKey];
+            return (
+              <motion.article
                 key={item.term}
                 layout
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
-                className="glass-card p-6 sm:p-10 rounded-[1.5rem] sm:rounded-[2.5rem] border-brand-tan/10 hover:border-brand-tan/40 hover:shadow-2xl hover:shadow-brand-tan/5 transition-all duration-500 group relative overflow-hidden"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.35 }}
+                className="group relative overflow-hidden rounded-[1.25rem] border editorial-border bg-gradient-to-br from-brand-cream/90 via-brand-mist/80 to-brand-sand/40 dark:from-brand-charcoal/70 dark:via-brand-ink/80 dark:to-brand-charcoal/40 backdrop-blur-md surface-shadow p-5 sm:p-8"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-tan/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
-                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-16 relative z-10">
-                  <div className="md:w-1/3 space-y-4">
-                    <div className="inline-block px-3 py-1 bg-brand-tan/10 rounded-full">
-                      <span className="text-[9px] uppercase font-sans font-bold tracking-[0.2em] text-brand-tan block">{item.category}</span>
-                    </div>
-                    <h2 className="text-4xl font-display font-bold dark:text-brand-cream group-hover:text-brand-tan transition-colors tracking-tighter">{item.term}</h2>
+                <div className={`absolute inset-0 bg-gradient-to-br ${accent.wash} opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                <div className={`absolute left-0 top-0 bottom-0 w-1 ${accent.rail} opacity-70`} />
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-[minmax(0,12rem)_1fr] gap-4 md:gap-10">
+                  <div className="space-y-3">
+                    <span className={`font-sans text-[9px] uppercase tracking-[0.2em] font-bold px-2.5 py-1 border border-current/20 ${accent.num} bg-white/35 dark:bg-white/5 inline-block`}>
+                      {item.category}
+                    </span>
+                    <h2 className={`text-2xl sm:text-3xl font-display font-bold tracking-tight ${accent.num}`}>
+                      {item.term}
+                    </h2>
                   </div>
-                  <div className="md:w-2/3 border-l border-brand-tan/10 md:pl-16">
-                    <p className="font-sans text-xl font-light leading-relaxed opacity-70 italic dark:text-brand-cream/80">
-                      {item.definition}
-                    </p>
-                  </div>
+                  <p className="font-sans text-base sm:text-lg font-normal leading-relaxed text-body md:border-l editorial-border md:pl-10">
+                    {item.definition}
+                  </p>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-          
-          {filteredTerms.length === 0 && (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-24 space-y-4"
-            >
-              <Book className="h-12 w-12 text-brand-tan mx-auto opacity-20" />
-              <p className="font-sans text-sm uppercase tracking-widest opacity-40">No matching terms found in our records.</p>
-            </motion.div>
-          )}
-        </div>
+              </motion.article>
+            );
+          })}
+        </AnimatePresence>
+
+        {filteredTerms.length === 0 && (
+          <p className="font-sans text-sm uppercase tracking-widest text-body/50 py-16 text-center">
+            {t('glossaryPage.empty')}
+          </p>
+        )}
       </div>
-    </div>
+
+      <PageCta />
+    </PageShell>
   );
 }

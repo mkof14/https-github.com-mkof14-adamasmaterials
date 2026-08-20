@@ -1,7 +1,12 @@
 node_modules
 dist
 .env
+.env.*
 .DS_Store
 .idea
 .vscode
 *.log
+public/hero-source.mp4
+assets-source
+.cursor
+agent-transcripts

@@ -1,0 +1,34 @@
+ADAMAS MATERIALS — Company Overview (Desktop / Print)
+====================================================
+Website: https://www.adamasmaterials.com
+HQ: Charlotte, NC, USA
+Est.: 2026
+
+Positioning
+-----------
+Materials for Heat, Power and Precision.
+CVD materials for cutting tools, data-center cooling, semiconductors,
+universities, and technical solutions.
+
+Markets
+-------
+1. Cutting tools — inserts, blanks, wear parts
+2. Data center cooling — heat sinks and heat spreaders
+3. Semiconductors — substrates, RF and power thermal parts
+4. Universities & labs — custom samples and pilot lots
+5. Technical solutions — spec-driven engineering supply
+
+How to engage
+-------------
+RFQ: https://www.adamasmaterials.com/rfq
+General: info@adamasmaterials.com
+Technical: rd@adamasmaterials.com
+Operations: ops@adamasmaterials.com
+
+Scope
+-----
+CVD only. Industrial and research customers. No jewelry or consumer fashion.
+
+Document: AM-OVERVIEW-EN | 2026-08
+Print or save this file for desktop reference. For mobile, open the same URL
+or install the Adamas Materials web app from the browser menu.
