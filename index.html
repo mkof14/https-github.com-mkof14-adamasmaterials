@@ -9,7 +9,13 @@
     <script>
       (function() {
         try {
-          var theme = localStorage.getItem('theme') || 'dark';
+          // Prefer light by default so the first paint isn't a black void.
+          if (localStorage.getItem('themeForcedLight') !== '1') {
+            localStorage.setItem('theme', 'light');
+            localStorage.setItem('themeForcedLight', '1');
+          }
+          var theme = localStorage.getItem('theme') || 'light';
+          document.documentElement.classList.remove('dark', 'light');
           document.documentElement.classList.add(theme);
         } catch (e) {}
       })();

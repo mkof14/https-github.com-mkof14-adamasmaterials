@@ -5,20 +5,20 @@ import { SEO } from '../components/SEO';
 export default function Contact() {
   const contactSections = [
     {
-      title: "General Inquiries",
-      description: "For partnership opportunities, media requests, and general information.",
+      title: "General",
+      description: "Partnerships, media, and general questions.",
       email: "info@adamasmaterials.com",
       icon: Mail
     },
     {
       title: "Technical & Research",
-      description: "For CVD specs, university projects, and engineering collaboration.",
+      description: "Specs, cutting tools, thermal parts, university projects, engineering.",
       email: "rd@adamasmaterials.com",
       icon: Globe
     },
     {
-      title: "Operations & Logistics",
-      description: "For production timelines, delivery status, and order coordination.",
+      title: "Operations",
+      description: "Timelines, delivery status, and order coordination.",
       email: "ops@adamasmaterials.com",
       icon: Phone
     }
@@ -32,8 +32,8 @@ export default function Contact() {
     >
       <SEO 
         title="Contact" 
-        description="Connect with Adamas Materials. Reach out for general inquiries, research collaborations, or technical product specifications." 
-        keywords="contact adamas materials, materials science inquiry, diamond research contact, charlotte office, industrial collaboration"
+        description="Contact Adamas Materials for CVD diamond projects: cutting tools, heat sinks and heat spreaders, semiconductors, and research." 
+        keywords="contact adamas materials, cvd diamond inquiry, cutting tools, heat spreader, charlotte nc"
       />
 
       <div className="max-w-3xl space-y-12">
@@ -42,12 +42,11 @@ export default function Contact() {
           animate={{ opacity: 1, x: 0 }}
           className="text-6xl md:text-8xl font-sans font-medium tracking-tight leading-[0.9]"
         >
-          CONNECT WITH <br />
-          <span className="opacity-40 italic">PRECISION</span>
+          Contact
         </motion.h1>
         
         <p className="font-sans text-xl md:text-2xl text-slate-600 dark:text-slate-400 leading-relaxed">
-          Our specialized teams are deployed to assist with project integration, from initial feasibility studies to full-scale industrial production.
+          Quotes, technical questions, and logistics. Charlotte, NC.
         </p>
       </div>
 

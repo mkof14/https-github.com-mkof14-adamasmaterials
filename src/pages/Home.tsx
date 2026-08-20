@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
 import { Microscope, Target, Zap, Plus } from 'lucide-react';
@@ -15,94 +15,55 @@ export function Home() {
         description="Adamas Materials — CVD diamond for cutting tools, heat sinks and heat spreaders, semiconductors, universities, and technical solutions." 
         keywords="cvd diamond, cutting tools, heat spreader, data center cooling, semiconductor diamond, adamas materials"
       />
-      {/* Hero Section */}
-      <section className="min-h-[85vh] flex overflow-hidden border-b editorial-border relative">
-        <div className="absolute inset-0 crystalline-bg pointer-events-none" />
-        
+
+      {/* Hero Section — equal columns */}
+      <section className="min-h-[85vh] grid grid-cols-1 lg:grid-cols-2 overflow-hidden border-b editorial-border relative bg-brand-mist dark:bg-brand-ink">
         {/* Content Side */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center p-12 lg:p-24 space-y-10 bg-brand-mist dark:bg-brand-ink/80 relative border-r editorial-border">
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-sand/80 via-brand-cream/40 to-transparent dark:from-brand-prismatic-cyan/5 dark:via-transparent pointer-events-none" />
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="space-y-6 relative z-10"
-          >
+        <div className="flex flex-col justify-center order-2 lg:order-1 px-8 py-14 sm:px-12 lg:px-16 xl:px-24 space-y-8 relative z-10">
+          <div className="space-y-5 max-w-xl">
             <span className="font-sans text-xs uppercase tracking-[0.3em] text-brand-tan font-bold">
               {t('common.est2026')}
             </span>
-            <h1 className="text-6xl md:text-8xl leading-[0.9] italic font-display">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl leading-[0.92] italic font-display text-brand-ink dark:text-brand-cream">
               {t('home.heroTitle')}<br/>
-              <span className="not-italic font-bold bg-gradient-to-r from-brand-ink via-brand-tan to-brand-ink dark:from-brand-cream dark:via-brand-tan dark:to-brand-cream bg-clip-text text-transparent">{t('home.heroAccent')}</span>
+              <span className="not-italic font-bold text-brand-tan">{t('home.heroAccent')}</span>
             </h1>
-          </motion.div>
+          </div>
           
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="font-sans text-lg font-light leading-relaxed opacity-80 max-w-md dark:text-brand-cream relative z-10"
-          >
+          <p className="font-sans text-base sm:text-lg font-normal leading-relaxed text-body max-w-md">
             {t('home.heroSubtitle')}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-wrap gap-6 pt-4 relative z-10"
-          >
-            <Link to="/rfq" className="bg-brand-ink text-brand-cream dark:bg-brand-cream dark:text-brand-ink px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-brand-tan dark:hover:bg-brand-tan transition-all duration-500 shadow-xl relative overflow-hidden group">
-              <span className="relative z-10">{t('home.cta')}</span>
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-0 -left-full w-full h-full shimmer opacity-20 transition-all group-hover:left-full duration-1000" />
-              </div>
+          <div className="flex flex-wrap items-center gap-x-10 gap-y-4 pt-2">
+            <Link
+              to="/rfq"
+              className="font-sans text-[11px] uppercase tracking-[0.22em] font-bold text-brand-ink dark:text-brand-cream border-b border-transparent hover:border-brand-tan hover:text-brand-tan transition-colors duration-300 pb-1"
+            >
+              {t('home.cta')}
             </Link>
-            <Link to="/about" className="border border-brand-ink/20 dark:border-brand-cream/20 px-10 py-4 font-sans text-xs uppercase tracking-widest font-bold hover:bg-brand-ink hover:text-white dark:hover:bg-brand-cream dark:hover:text-brand-ink transition-all backdrop-blur-sm">
+            <Link
+              to="/about"
+              className="font-sans text-[11px] uppercase tracking-[0.22em] font-semibold text-brand-subtle dark:text-brand-subtle border-b border-transparent hover:border-brand-tan hover:text-brand-tan transition-colors duration-300 pb-1"
+            >
               {t('common.learnMore')}
             </Link>
-          </motion.div>
-        </div>
-
-        {/* Visual Side */}
-        <div className="hidden lg:flex w-1/2 relative bg-brand-sand dark:bg-transparent prismatic-gradient items-center justify-center p-12 lg:p-24 overflow-hidden">
-          <div className="absolute inset-0 subtle-pulse" style={{ backgroundImage: 'radial-gradient(var(--color-brand-tan) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-          
-          <div className="z-10 text-center space-y-12 w-full max-w-lg">
-            <motion.div 
-              initial={{ rotate: 45, opacity: 0 }}
-              animate={{ rotate: 12, opacity: 1 }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              className="w-64 h-64 bg-brand-ink mx-auto rounded-[3rem] flex items-center justify-center diamond-shadow border border-brand-tan/20 relative group overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-prismatic-cyan/20 via-transparent to-brand-prismatic-violet/20 opacity-50" />
-              <div className="w-52 h-52 border-2 border-brand-tan/10 rounded-[2.5rem] flex items-center justify-center relative">
-                <div className="absolute top-0 -left-full w-full h-full shimmer opacity-40 group-hover:left-full transition-all duration-[2000ms]" />
-                <div className="w-40 h-40 border border-brand-tan/20 rounded-[2rem] flex items-center justify-center bg-brand-ink relative overflow-hidden">
-                  <div className="absolute inset-0 accent-gradient opacity-10" />
-                  <span className="text-white font-display text-7xl font-bold logo-glow relative z-10">A</span>
-                </div>
-              </div>
-            </motion.div>
-
-            <div className="grid grid-cols-2 gap-6">
-              <StatItem label={t('common.quarterlyGrowth')} value="B2B" />
-              <StatItem label={t('common.patentAssets')} value="CVD" />
-            </div>
           </div>
         </div>
+
+        <HeroVideo />
       </section>
 
       {/* Positioning */}
-      <section className="py-32 band-warm dark:bg-brand-ink relative overflow-hidden border-b editorial-border">
-        <div className="absolute top-0 right-0 w-96 h-96 prismatic-gradient rounded-full blur-[120px] opacity-40 dark:opacity-10 -mr-48 -mt-48" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-prismatic-cyan/20 dark:bg-brand-prismatic-cyan/5 rounded-full blur-[120px] opacity-50 dark:opacity-20 -ml-48 -mb-48" />
+      <section className="py-32 bg-brand-cream dark:bg-brand-ink relative overflow-hidden border-b editorial-border">
+        <div className="absolute top-0 right-0 w-96 h-96 prismatic-gradient rounded-full blur-[120px] opacity-15 dark:opacity-10 -mr-48 -mt-48" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-stone/30 dark:bg-brand-prismatic-cyan/5 rounded-full blur-[120px] opacity-20 -ml-48 -mb-48" />
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl space-y-4">
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('common.coreFocus')}</span>
               <h2 className="text-4xl md:text-6xl font-display">{t('home.positioningTitle')}</h2>
             </div>
-            <p className="max-w-xs text-sm opacity-60 font-sans leading-relaxed italic border-l-2 border-brand-tan pl-6">
+            <p className="max-w-xs text-sm text-body font-sans leading-relaxed italic border-l-2 border-brand-tan pl-6">
               {t('home.positioningSubtitle')}
             </p>
           </div>
@@ -131,9 +92,8 @@ export function Home() {
       <section className="py-32 border-t editorial-border surface-gradient relative">
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="max-w-4xl mx-auto space-y-10 text-center">
-            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('common.solutions')}</span>
-            <h2 className="text-4xl md:text-6xl font-display leading-tight italic">{t('home.extremePerformance')}<br/><span className="not-italic font-bold">Solutions.</span></h2>
-            <p className="text-lg font-sans font-light leading-relaxed opacity-70 dark:text-brand-cream/80 max-w-2xl mx-auto">
+            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">{t('common.coreFocus')}</span>
+            <p className="text-lg md:text-xl font-sans font-normal leading-relaxed text-body max-w-2xl mx-auto">
               {t('home.solutionText')}
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
@@ -153,23 +113,115 @@ export function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <FaqSection />
 
-      {/* Final CTA */}
-      <section className="py-32 bg-gradient-to-br from-brand-ink via-brand-charcoal to-brand-ink dark:from-brand-mist dark:via-brand-cream dark:to-brand-sand relative overflow-hidden">
-        <div className="absolute inset-0 accent-gradient opacity-20 dark:opacity-10 pointer-events-none" />
-        <div className="container mx-auto px-6 text-center space-y-10 relative z-10">
-          <h2 className="text-5xl md:text-7xl font-display italic text-brand-cream dark:text-brand-ink leading-tight">
-            Ready to discuss your <span className="not-italic font-bold">CVD project?</span>
-          </h2>
-          <div className="flex justify-center">
-            <Link to="/rfq" className="bg-brand-tan text-brand-ink px-16 py-6 font-sans text-xs uppercase tracking-[0.3em] font-extrabold hover:bg-brand-cream hover:text-brand-ink transition-all shadow-2xl hover:scale-105 active:scale-95">
-              Request Quote
-            </Link>
-          </div>
+      {/* RFQ */}
+      <section className="py-16 border-t editorial-border bg-brand-mist dark:bg-brand-ink">
+        <div className="container mx-auto px-6 flex justify-center">
+          <Link
+            to="/rfq"
+            className="font-sans text-xs uppercase tracking-[0.28em] font-bold text-brand-ink dark:text-brand-cream border-b border-brand-tan/40 hover:border-brand-tan hover:text-brand-tan transition-colors duration-300 pb-2"
+          >
+            {t('home.cta')}
+          </Link>
         </div>
       </section>
+    </div>
+  );
+}
+
+function HeroVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [ended, setEnded] = useState(false);
+
+  const startPlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    setEnded(false);
+    video.muted = false;
+    setMuted(false);
+    void video.play().then(() => setPlaying(true)).catch(() => {
+      video.muted = true;
+      setMuted(true);
+      void video.play().then(() => setPlaying(true)).catch(() => undefined);
+    });
+  };
+
+  const toggleMute = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setMuted(video.muted);
+  };
+
+  const holdLastFrame = () => {
+    const video = videoRef.current;
+    if (!video || !Number.isFinite(video.duration)) return;
+    video.pause();
+    video.currentTime = Math.max(0, video.duration - 0.04);
+    setPlaying(false);
+    setEnded(true);
+  };
+
+  const showPlay = !playing || ended;
+
+  return (
+    <div className="relative w-full order-1 lg:order-2 flex items-center justify-center px-6 py-8 sm:px-8 lg:px-10 xl:px-14 lg:py-0 min-h-[40vh] lg:min-h-[85vh]">
+      <div
+        className="relative w-full aspect-video overflow-hidden cursor-pointer group"
+        onClick={showPlay ? startPlayback : undefined}
+        role={showPlay ? 'button' : undefined}
+        tabIndex={showPlay ? 0 : undefined}
+        onKeyDown={(e) => {
+          if (showPlay && (e.key === 'Enter' || e.key === ' ')) {
+            e.preventDefault();
+            startPlayback();
+          }
+        }}
+        aria-label={showPlay ? 'Play brand film' : undefined}
+      >
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          playsInline
+          preload="metadata"
+          poster="/hero-poster.jpg"
+          onEnded={holdLastFrame}
+          onPlay={() => { setPlaying(true); setEnded(false); }}
+          onPause={() => setPlaying(false)}
+          aria-label="Adamas Materials brand film"
+        >
+          <source src="/hero.webm" type="video/webm" />
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-brand-ink/20 dark:bg-brand-ink/25" />
+        <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-14 bg-gradient-to-r from-brand-mist/90 to-transparent dark:from-brand-ink/90" />
+        <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-brand-mist/70 to-transparent dark:from-brand-ink/70" />
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-brand-mist/50 to-transparent dark:from-brand-ink/50" />
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-brand-mist/70 to-transparent dark:from-brand-ink/70" />
+
+        {showPlay && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center">
+            <span className="font-sans text-[11px] uppercase tracking-[0.28em] font-bold text-brand-cream/85 lg:text-brand-cream/0 lg:group-hover:text-brand-cream border-b border-brand-cream/50 lg:border-transparent lg:group-hover:border-brand-cream/80 transition-all duration-300 pb-1">
+              {ended ? 'Replay' : 'Play'}
+            </span>
+          </div>
+        )}
+
+        {playing && !ended && (
+          <button
+            type="button"
+            onClick={toggleMute}
+            className="absolute bottom-4 right-5 z-20 font-sans text-[10px] uppercase tracking-[0.22em] font-semibold text-brand-cream/75 lg:text-brand-cream/0 lg:group-hover:text-brand-cream border-b border-brand-cream/40 lg:border-transparent lg:group-hover:border-brand-cream/60 transition-all duration-300 pb-0.5"
+          >
+            {muted ? 'Unmute' : 'Mute'}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
@@ -180,16 +232,14 @@ function FaqSection() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   return (
-    <section className="py-32 band-cool dark:bg-brand-ink border-t editorial-border relative overflow-hidden">
-      <div className="absolute inset-0 crystalline-bg pointer-events-none opacity-40 dark:opacity-100" />
+    <section className="py-32 bg-brand-mist dark:bg-brand-ink border-t editorial-border relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto space-y-16">
           <div className="text-center space-y-4">
-            <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-copper font-bold">Inquiries</span>
-            <h2 className="text-4xl md:text-6xl font-display leading-tight italic">
+            <h2 className="text-4xl md:text-6xl font-display leading-tight">
               {t('home.faq.title')}
             </h2>
-            <p className="max-w-2xl mx-auto text-lg font-sans font-light opacity-60 dark:text-brand-cream/60">
+            <p className="max-w-2xl mx-auto text-lg font-sans font-normal text-body">
               {t('home.faq.subtitle')}
             </p>
           </div>
@@ -219,7 +269,7 @@ function FaqSection() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                     >
-                      <p className="pb-12 text-lg font-sans font-light leading-relaxed opacity-70 max-w-3xl dark:text-brand-cream/70">
+                      <p className="pb-12 text-lg font-sans font-normal leading-relaxed text-body max-w-3xl">
                         {item.a}
                       </p>
                     </motion.div>
@@ -230,9 +280,8 @@ function FaqSection() {
           </div>
           
           <div className="pt-8 text-center">
-            <p className="font-sans text-xs uppercase tracking-[0.2em] opacity-40 mb-6 italic">Need a technical answer?</p>
             <Link to="/rfq" className="font-sans text-[10px] uppercase tracking-widest font-extrabold text-brand-tan border-b border-brand-tan/30 pb-2 hover:border-brand-tan transition-all">
-              Send an RFQ
+              {t('home.cta')}
             </Link>
           </div>
         </div>
@@ -241,35 +290,19 @@ function FaqSection() {
   );
 }
 
-function StatItem({ label, value }: { label: string, value: string }) {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      className="glass-card p-8 rounded-2xl text-left shadow-lg border-brand-copper/30 bg-gradient-to-br from-brand-mist to-brand-sand/60 dark:from-transparent dark:to-transparent"
-    >
-      <p className="font-sans text-[10px] uppercase tracking-widest text-brand-copper dark:text-brand-tan mb-2 font-bold">{label}</p>
-      <p className="font-display text-4xl font-bold dark:text-brand-cream">{value}</p>
-    </motion.div>
-  );
-}
-
 function FeatureCard({ icon, title, text }: { icon: React.ReactNode, title: string, text: string }) {
   return (
-    <motion.div 
-      whileHover={{ y: -5 }}
-      className="p-10 border border-brand-copper/20 dark:border-brand-border-dark glass-card space-y-8 flex flex-col items-start hover:border-brand-copper/50 dark:hover:border-brand-tan/50 transition-all duration-500 rounded-[3rem] bg-gradient-to-b from-brand-mist to-brand-sand/40 dark:from-transparent dark:to-transparent"
-    >
-      <div className="text-brand-copper dark:text-brand-tan p-4 bg-brand-copper/15 dark:bg-brand-tan/10 rounded-2xl">
+    <div className="p-10 border editorial-border glass-card space-y-8 flex flex-col items-start hover:border-brand-tan/40 transition-all duration-500 rounded-[3rem]">
+      <div className="text-brand-tan p-4 bg-brand-tan/10 rounded-2xl">
         {icon}
       </div>
       <div className="space-y-4">
         <h3 className="text-2xl font-display italic tracking-tight">{title}</h3>
-        <p className="text-sm font-sans font-light leading-relaxed opacity-70">
+        <p className="text-sm font-sans font-normal leading-relaxed text-body">
           {text}
         </p>
       </div>
-      <div className="h-px w-12 bg-gradient-to-r from-brand-copper to-brand-gold dark:bg-brand-tan mt-auto" />
-    </motion.div>
+      <div className="h-px w-12 bg-brand-tan/40 mt-auto" />
+    </div>
   );
 }

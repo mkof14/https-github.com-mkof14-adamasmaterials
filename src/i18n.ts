@@ -184,7 +184,8 @@ const resources = {
         copyright: '© 2026 Adamas Materials. All rights reserved.',
         legal: 'Legal',
         privacy: 'Privacy Policy',
-        terms: 'Terms of Service'
+        terms: 'Terms of Service',
+        blurb: 'CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.'
       }
     }
   },
@@ -370,7 +371,8 @@ const resources = {
         copyright: '© 2026 Adamas Materials. Все права защищены.',
         legal: 'Правовая информация',
         privacy: 'Политика конфиденциальности',
-        terms: 'Условия использования'
+        terms: 'Условия использования',
+        blurb: 'CVD-алмаз: твёрдость для резцов, высокая теплопроводность для охлаждения и силовой электроники, материалы для полупроводников и науки.'
       }
     }
   },
@@ -556,7 +558,8 @@ const resources = {
         copyright: '© 2026 Adamas Materials. Усі права захищені.',
         legal: 'Правова інформація',
         privacy: 'Політика конфіденційності',
-        terms: 'Умови використання'
+        terms: 'Умови використання',
+        blurb: 'CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.'
       }
     }
   },
@@ -742,7 +745,8 @@ const resources = {
         copyright: '© 2026 Adamas Materials. Todos los derechos reservados.',
         legal: 'Legal',
         privacy: 'Privacidad',
-        terms: 'Términos'
+        terms: 'Términos',
+        blurb: 'CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.'
       }
     }
   },
@@ -928,7 +932,8 @@ const resources = {
         copyright: '© 2026 Adamas Materials. Tous droits réservés.',
         legal: 'Mentions légales',
         privacy: 'Confidentialité',
-        terms: 'Conditions'
+        terms: 'Conditions',
+        blurb: 'CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.'
       }
     }
   },
@@ -1114,7 +1119,8 @@ const resources = {
         copyright: '© 2026 Adamas Materials. Alle Rechte vorbehalten.',
         legal: 'Rechtliches',
         privacy: 'Datenschutz',
-        terms: 'Nutzungsbedingungen'
+        terms: 'Nutzungsbedingungen',
+        blurb: 'CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.'
       }
     }
   },
@@ -1300,7 +1306,8 @@ const resources = {
         copyright: '© 2026 Adamas Materials. All rights reserved.',
         legal: '法務',
         privacy: 'プライバシー',
-        terms: '利用規約'
+        terms: '利用規約',
+        blurb: 'CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.'
       }
     }
   },
@@ -1486,7 +1493,8 @@ const resources = {
         copyright: '© 2026 Adamas Materials. כל הזכויות שמורות.',
         legal: 'משפטי',
         privacy: 'פרטיות',
-        terms: 'תנאים'
+        terms: 'תנאים',
+        blurb: 'CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.'
       }
     }
   },
@@ -1672,7 +1680,8 @@ const resources = {
         copyright: '© 2026 Adamas Materials. جميع الحقوق محفوظة.',
         legal: 'قانوني',
         privacy: 'الخصوصية',
-        terms: 'الشروط'
+        terms: 'الشروط',
+        blurb: 'CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.'
       }
     }
   }

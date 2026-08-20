@@ -6,51 +6,52 @@
   --font-display: "Playfair Display", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  
-  /* Light surfaces — beige start → off-white end */
-  --color-brand-cream: #F4EFE6; /* warm off-white */
-  --color-brand-mist: #FCFAF7; /* near-white off-white */
-  --color-brand-sand: #E5D5BE; /* clear beige */
-  --color-brand-stone: #D2BFA3; /* deep beige */
-  /* Accents */
-  --color-brand-tan: #C4A484;
-  --color-brand-copper: #B8956C;
-  --color-brand-gold: #D4AF37;
-  --color-brand-ink: #121212;
-  --color-brand-charcoal: #1E1E1E;
+
+  /* Soft off-white + ~25% warmth (restored) */
+  --color-brand-cream: #F7F5F0;
+  --color-brand-mist: #FBF9F7;
+  --color-brand-sand: #EDE8E0;
+  --color-brand-stone: #E0D8CD;
+  /* Accents: darker in light for readable labels */
+  --color-brand-tan: #6E6356;
+  --color-brand-copper: #6A5F54;
+  --color-brand-gold: #6F6748;
+  --color-brand-ink: #0A0A0A;
+  --color-brand-charcoal: #161616;
   --color-brand-deep-blue: #1A2238;
-  --color-brand-steel: #4A5563;
+  --color-brand-steel: #3F3B36;
+  --color-brand-muted: #2E2B27;
+  --color-brand-subtle: #4A4540;
   --color-brand-emerald: #0B5C45;
-  --color-brand-diamond-blue: #D6E6F0;
-  --color-brand-prismatic-cyan: #A8D4DC;
-  --color-brand-prismatic-violet: #C8CDD6;
-  --color-brand-border: rgba(18, 18, 18, 0.08);
-  --color-brand-border-dark: rgba(251, 249, 246, 0.08);
+  --color-brand-diamond-blue: #E8EEF0;
+  --color-brand-prismatic-cyan: #C8D4D6;
+  --color-brand-prismatic-violet: #D0D0D4;
+  --color-brand-border: rgba(10, 10, 10, 0.12);
+  --color-brand-border-dark: rgba(247, 245, 240, 0.14);
+}
+
+/* Dark theme: brighter text + lighter accents on black */
+html.dark {
+  --color-brand-cream: #F4F1EB;
+  --color-brand-tan: #D2C4B0;
+  --color-brand-copper: #C9B8A6;
+  --color-brand-gold: #D0C49A;
+  --color-brand-steel: #C2BDB4;
+  --color-brand-muted: #E6E2DA;
+  --color-brand-subtle: #B8B2A8;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
-  body {
-    @apply font-sans antialiased text-brand-ink dark:text-brand-cream dark:bg-brand-ink transition-colors duration-1000;
-    background-color: var(--color-brand-sand);
-    background-image: linear-gradient(
-      180deg,
-      var(--color-brand-sand) 0%,
-      var(--color-brand-cream) 42%,
-      var(--color-brand-mist) 100%
-    );
-  }
 
-  html.dark body {
-    background-color: var(--color-brand-ink);
-    background-image: none;
+  body {
+    @apply font-sans antialiased text-brand-ink bg-brand-mist dark:text-brand-cream dark:bg-brand-ink transition-colors duration-1000;
   }
 
   h1, h2, h3, h4 {
-    @apply font-display tracking-tight font-bold;
+    @apply font-display tracking-tight font-bold text-brand-ink dark:text-brand-cream;
   }
 }
 
@@ -60,61 +61,52 @@
   }
 
   .nav-link {
-    @apply text-[11px] uppercase tracking-[0.2em] font-semibold hover:text-brand-copper transition-all duration-300;
+    @apply text-[11px] uppercase tracking-[0.2em] font-semibold text-brand-ink/90 dark:text-brand-cream/90 hover:text-brand-tan transition-all duration-300;
+  }
+
+  .text-body {
+    @apply text-brand-muted dark:text-brand-muted;
+  }
+
+  .text-secondary {
+    @apply text-brand-subtle dark:text-brand-subtle;
+  }
+
+  .text-label {
+    @apply text-brand-subtle dark:text-brand-subtle;
   }
 
   .glass-card {
-    @apply bg-brand-mist/80 dark:bg-brand-charcoal/40 backdrop-blur-2xl border border-brand-tan/25 dark:border-brand-border-dark shadow-[0_12px_40px_-12px_rgba(58,74,92,0.12)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+    @apply bg-brand-mist/90 dark:bg-brand-charcoal/40 backdrop-blur-2xl border border-brand-border dark:border-brand-border-dark shadow-[0_8px_24px_0_rgba(0,0,0,0.04)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
 
   .accent-gradient {
-    @apply bg-gradient-to-br from-brand-copper/20 via-brand-mist to-brand-prismatic-cyan/20 dark:from-brand-tan/5 dark:via-brand-ink dark:to-brand-gold/5;
+    @apply bg-gradient-to-br from-brand-tan/8 via-brand-mist to-transparent dark:from-brand-tan/5 dark:via-brand-ink dark:to-brand-gold/5;
   }
 
   .surface-gradient {
-    @apply bg-gradient-to-b from-brand-mist via-brand-cream to-brand-sand dark:from-brand-ink/80 dark:via-brand-ink dark:to-brand-charcoal/40;
+    @apply bg-gradient-to-b from-brand-mist to-brand-cream dark:from-brand-ink/80 dark:to-brand-charcoal/40;
   }
 
   .prismatic-gradient {
-    @apply bg-gradient-to-tr from-brand-sand/60 via-brand-mist to-brand-tan/25 dark:from-brand-prismatic-cyan/5 dark:via-transparent dark:to-brand-prismatic-violet/5;
+    @apply bg-gradient-to-tr from-brand-sand/55 via-brand-mist to-brand-mist dark:from-brand-prismatic-cyan/5 dark:via-transparent dark:to-brand-prismatic-violet/5;
   }
 
   .band-warm {
-    background-image: linear-gradient(
-      180deg,
-      var(--color-brand-sand) 0%,
-      var(--color-brand-cream) 55%,
-      var(--color-brand-mist) 100%
-    );
-  }
-
-  html.dark .band-warm {
-    background-image: none;
-    background-color: var(--color-brand-ink);
+    @apply bg-brand-cream dark:bg-brand-ink;
   }
 
   .band-cool {
-    background-image: linear-gradient(
-      180deg,
-      var(--color-brand-mist) 0%,
-      var(--color-brand-cream) 50%,
-      var(--color-brand-sand) 100%
-    );
-  }
-
-  html.dark .band-cool {
-    background-image: none;
-    background-color: var(--color-brand-ink);
+    @apply bg-brand-mist dark:bg-brand-ink;
   }
 
   .crystalline-bg {
-    background-image: 
-      linear-gradient(60deg, var(--color-brand-copper) 1.2%, transparent 1.2%),
-      linear-gradient(300deg, var(--color-brand-gold) 1.2%, transparent 1.2%),
-      linear-gradient(120deg, var(--color-brand-prismatic-cyan) 0.8%, transparent 0.8%);
-    background-size: 72px 72px;
-    background-position: 0 0, 36px 36px, 18px 18px;
-    opacity: 0.07;
+    background-image:
+      linear-gradient(60deg, var(--color-brand-tan) 1%, transparent 1%),
+      linear-gradient(300deg, var(--color-brand-gold) 1%, transparent 1%);
+    background-size: 80px 80px;
+    background-position: 0 0, 40px 40px;
+    opacity: 0.035;
   }
 
   html.dark .crystalline-bg {
@@ -122,22 +114,20 @@
   }
 
   .diamond-shadow {
-    box-shadow:
-      0 20px 50px -15px rgba(126, 200, 212, 0.28),
-      0 8px 24px -10px rgba(176, 125, 79, 0.18);
+    box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.08);
   }
 
   html.dark .diamond-shadow {
-    box-shadow: 0 20px 50px -15px rgba(165, 243, 252, 0.2);
+    box-shadow: 0 20px 50px -15px rgba(165, 243, 252, 0.15);
   }
 }
 
 .logo-glow {
-  filter: drop-shadow(0 0 15px rgba(126, 200, 212, 0.45));
+  filter: drop-shadow(0 0 10px rgba(180, 180, 180, 0.25));
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
   background-size: 200% 100%;
   animation: shimmer 3s infinite;
 }
@@ -152,21 +142,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
-    opacity: 0.15;
-  }
-  50% {
-    opacity: 0.4;
-  }
-}
-
-html.dark .subtle-pulse {
-  animation-name: pulse-dark;
-}
-
-@keyframes pulse-dark {
-  0%, 100% { opacity: 0.1; }
-  50% { opacity: 0.3; }
+  0%, 100% { opacity: 0.08; }
+  50% { opacity: 0.18; }
 }
 
 .image-overlay {

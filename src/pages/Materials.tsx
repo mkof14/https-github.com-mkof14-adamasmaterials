@@ -95,23 +95,6 @@ export function Materials() {
               </motion.div>
             ))}
           </div>
-
-          {/* Global Standards */}
-          <div className="py-20 border editorial-border grid grid-cols-1 md:grid-cols-3 gap-12 surface-gradient p-12 rounded-[4rem] text-center relative overflow-hidden diamond-shadow">
-            <div className="absolute inset-0 crystalline-bg opacity-10 pointer-events-none" />
-            <div className="space-y-4 relative z-10">
-              <span className="text-5xl font-display font-bold bg-gradient-to-br from-brand-ink to-brand-tan dark:from-brand-cream dark:to-brand-tan bg-clip-text text-transparent italic">99.99%</span>
-              <p className="font-sans text-[10px] uppercase tracking-widest opacity-60">Minimum Purity Level</p>
-            </div>
-            <div className="space-y-4 relative z-10">
-              <span className="text-5xl font-display font-bold italic bg-gradient-to-br from-brand-ink to-brand-tan dark:from-brand-cream dark:to-brand-tan bg-clip-text text-transparent">ISO 2026</span>
-              <p className="font-sans text-[10px] uppercase tracking-widest opacity-60">Certified Methodology</p>
-            </div>
-            <div className="space-y-4 relative z-10">
-              <span className="text-5xl font-display font-bold bg-gradient-to-br from-brand-ink to-brand-tan dark:from-brand-cream dark:to-brand-tan bg-clip-text text-transparent italic tracking-tighter">Traceable</span>
-              <p className="font-sans text-[10px] uppercase tracking-widest opacity-60">Batch Chain of Custody</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>

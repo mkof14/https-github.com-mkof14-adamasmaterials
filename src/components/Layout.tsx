@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { SEO } from './SEO';
-import { motion } from 'motion/react';
 
 export function Layout() {
   return (
@@ -11,13 +10,7 @@ export function Layout() {
       <SEO />
       <Header />
       <main className="flex-grow">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Outlet />
-        </motion.div>
+        <Outlet />
       </main>
       <Footer />
     </div>

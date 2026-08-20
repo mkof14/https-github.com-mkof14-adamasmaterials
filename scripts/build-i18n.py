@@ -168,6 +168,7 @@ EN = {
     "legal": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
+    "blurb": "CVD diamond: hardness for cutting tools, high thermal conductivity for cooling and power electronics, materials for semiconductors and research.",
   },
 }
 
@@ -253,6 +254,7 @@ TRANSLATIONS = {
     "footer": {
       "copyright": "© 2026 Adamas Materials. Все права защищены.",
       "legal": "Правовая информация", "privacy": "Политика конфиденциальности", "terms": "Условия использования",
+      "blurb": "CVD-алмаз: твёрдость для резцов, высокая теплопроводность для охлаждения и силовой электроники, материалы для полупроводников и науки.",
     },
   },
 }

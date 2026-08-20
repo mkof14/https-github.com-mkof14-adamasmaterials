@@ -15,10 +15,10 @@ export const materials: Material[] = [
     id: 'cvd-tooling',
     name: 'CVD for Cutting Tools',
     category: 'Tooling',
-    description: 'CVD diamond for cutting inserts and wear parts. Extreme hardness and wear resistance for precision machining and long edge life.',
+    description: 'CVD diamond for cutting inserts and wear parts. Extreme hardness (up to ~100 GPa) and wear resistance for precision machining and long edge life.',
     specifications: [
       { label: 'Process', value: 'CVD' },
-      { label: 'Key property', value: 'Hardness / wear resistance' },
+      { label: 'Hardness', value: 'Up to ~100 GPa' },
       { label: 'Thermal Conductivity', value: 'High' },
       { label: 'Form', value: 'Blanks / coated solutions' }
     ],

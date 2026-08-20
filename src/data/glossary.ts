@@ -30,6 +30,11 @@ export const GLOSSARY_TERMS = [
     category: "Applications"
   },
   {
+    term: "Hardness",
+    definition: "Resistance to permanent deformation. Diamond reaches up to about 100 GPa — the basis for long-life cutting tools and wear parts.",
+    category: "Materials Science"
+  },
+  {
     term: "Cutting Insert",
     definition: "A replaceable cutting tip used in machining. CVD diamond offers extreme hardness and wear resistance for hard materials and precision work.",
     category: "Applications"

@@ -82,13 +82,6 @@ export function QualityProcess() {
             </div>
           </div>
         </section>
-
-        <section className="py-24 border-y editorial-border text-center">
-          <p className="max-w-3xl mx-auto font-display text-4xl italic leading-tight text-brand-ink/80 dark:text-brand-cream/80">
-            "Clear process. Clear specs. Material that fits the job."
-          </p>
-          <p className="mt-8 font-sans text-xs uppercase tracking-[0.4em] font-bold opacity-40">— Adamas Materials</p>
-        </section>
       </div>
     </div>
   );
