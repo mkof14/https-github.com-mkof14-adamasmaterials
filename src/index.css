@@ -23,7 +23,7 @@
   --color-brand-muted: #2E2B27;
   --color-brand-subtle: #4A4540;
   --color-brand-emerald: #0B5C45;
-  --color-brand-diamond-blue: #E8EEF0;
+  --color-brand-mist-blue: #E8EEF0;
   --color-brand-prismatic-cyan: #C8D4D6;
   --color-brand-prismatic-violet: #D0D0D4;
   --color-brand-border: rgba(10, 10, 10, 0.12);
@@ -114,11 +114,11 @@ html.dark {
     opacity: 0.03;
   }
 
-  .diamond-shadow {
+  .surface-shadow {
     box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.08);
   }
 
-  html.dark .diamond-shadow {
+  html.dark .surface-shadow {
     box-shadow: 0 20px 50px -15px rgba(165, 243, 252, 0.15);
   }
 }

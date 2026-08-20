@@ -18,7 +18,7 @@ export function Glossary() {
     <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title="Technical Glossary" 
-        description="Short glossary of CVD diamond and related technical terms used by Adamas Materials." 
+        description="Short glossary of CVD materials and related technical terms used by Adamas Materials." 
         keywords="cvd glossary, chemical vapor deposition, heat spreader, cutting insert, raman spectroscopy"
       />
       <div className="max-w-4xl mx-auto space-y-10 sm:space-y-16">
@@ -27,7 +27,7 @@ export function Glossary() {
           <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Reference</span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-display leading-[1.05] italic text-pretty">Technical<br/><span className="not-italic font-bold">Glossary.</span></h1>
           <p className="text-base sm:text-xl font-sans font-light leading-relaxed opacity-60 max-w-2xl">
-            Short definitions for CVD diamond and the applications we support.
+            Short definitions for CVD materials and the applications we support.
           </p>
         </div>
 

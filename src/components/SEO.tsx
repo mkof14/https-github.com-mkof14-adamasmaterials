@@ -9,9 +9,9 @@ interface SEOProps {
 
 export function SEO({ title, description, keywords }: SEOProps) {
   const canonicalUrl = `https://www.adamasmaterials.com${window.location.pathname}`;
-  const fullTitle = title ? `${title} | Adamas Materials` : 'Adamas Materials | CVD Diamond';
-  const metaDescription = description || "CVD diamond for cutting tools, heat sinks and heat spreaders, semiconductors, universities, and technical solutions.";
-  const metaKeywords = keywords || "cvd diamond, cutting tools, heat spreader, data center cooling, semiconductor diamond, adamas materials";
+  const fullTitle = title ? `${title} | Adamas Materials` : 'Adamas Materials | Materials for Heat, Power and Precision';
+  const metaDescription = description || "CVD materials for cutting tools, heat sinks and heat spreaders, semiconductors, universities, and technical solutions.";
+  const metaKeywords = keywords || "cvd materials, cutting tools, heat spreader, data center cooling, semiconductor materials, adamas materials";
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -19,7 +19,7 @@ export function SEO({ title, description, keywords }: SEOProps) {
     "name": "Adamas Materials",
     "url": "https://www.adamasmaterials.com",
     "logo": "https://www.adamasmaterials.com/logo.png",
-    "description": "CVD diamond for cutting tools, data center cooling, semiconductors, universities, and technical solutions.",
+    "description": "CVD materials for cutting tools, data center cooling, semiconductors, universities, and technical solutions.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Charlotte",
@@ -40,7 +40,7 @@ export function SEO({ title, description, keywords }: SEOProps) {
       "@type": "Organization",
       "name": "Adamas Materials"
     },
-    "serviceType": "CVD Diamond Materials",
+    "serviceType": "CVD Materials",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "CVD Materials",
@@ -50,7 +50,7 @@ export function SEO({ title, description, keywords }: SEOProps) {
           "itemOffered": {
             "@type": "Service",
             "name": "CVD for Cutting Tools",
-            "description": "CVD diamond for cutting inserts and wear parts."
+            "description": "CVD materials for cutting inserts and wear parts."
           }
         },
         {
@@ -58,7 +58,7 @@ export function SEO({ title, description, keywords }: SEOProps) {
           "itemOffered": {
             "@type": "Service",
             "name": "CVD for Thermal Management",
-            "description": "CVD diamond heat spreaders for data centers and power electronics."
+            "description": "CVD heat spreaders for data centers and power electronics."
           }
         },
         {
@@ -66,7 +66,7 @@ export function SEO({ title, description, keywords }: SEOProps) {
           "itemOffered": {
             "@type": "Service",
             "name": "CVD for Semiconductors & Research",
-            "description": "CVD diamond materials for semiconductor and university projects."
+            "description": "CVD materials for semiconductor and university projects."
           }
         }
       ]

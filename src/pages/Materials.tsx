@@ -18,8 +18,8 @@ export function Materials() {
       <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24 relative z-10">
         <SEO 
           title={t('nav.materials')} 
-          description="CVD diamond materials for cutting tools, data center cooling, semiconductors, and research." 
-          keywords="cvd diamond materials, cutting tool diamond, thermal diamond, semiconductor cvd, research diamond"
+          description="CVD materials materials for cutting tools, data center cooling, semiconductors, and research." 
+          keywords="cvd materials materials, cutting tool materials, thermal materials, semiconductor cvd, research materials"
         />
         
         <div className="max-w-7xl mx-auto space-y-16 sm:space-y-24">
@@ -30,7 +30,7 @@ export function Materials() {
               <span className="not-italic font-bold bg-gradient-to-r from-brand-tan via-brand-ink to-brand-tan dark:from-brand-tan dark:via-brand-cream dark:to-brand-tan bg-clip-text text-transparent">Materials.</span>
             </h1>
             <p className="text-lg sm:text-2xl font-sans font-light leading-relaxed opacity-80 dark:text-brand-cream/90 border-l-4 border-brand-tan pl-5 sm:pl-8">
-              CVD diamond for hardness and wear in tooling, heat sinks and spreaders for cooling, and materials for high-power electronics and research.
+              CVD materials for hardness and wear in tooling, heat sinks and spreaders for cooling, and materials for high-power electronics and research.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ export function Materials() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="glass-card group flex flex-col md:flex-row rounded-[1.75rem] sm:rounded-[3rem] border-brand-tan/20 hover:border-brand-tan/50 transition-all duration-500 overflow-hidden diamond-shadow"
+                className="glass-card group flex flex-col md:flex-row rounded-[1.75rem] sm:rounded-[3rem] border-brand-tan/20 hover:border-brand-tan/50 transition-all duration-500 overflow-hidden surface-shadow"
               >
                 {/* Material Info */}
                 <div className="flex-1 p-6 sm:p-10 md:p-12 space-y-6 sm:space-y-8 bg-brand-sand/60 dark:bg-brand-ink/50 backdrop-blur-md relative overflow-hidden">

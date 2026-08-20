@@ -11,8 +11,8 @@ export function Capabilities() {
     <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title={t('nav.capabilities')} 
-        description="CVD diamond growth and technical capabilities for cutting tools, thermal management, semiconductors, and research." 
-        keywords="cvd diamond growth, cutting tool materials, data center thermal management, semiconductor cvd diamond"
+        description="CVD materials growth and technical capabilities for cutting tools, thermal management, semiconductors, and research." 
+        keywords="cvd materials growth, cutting tool materials, data center thermal management, semiconductor cvd materials"
       />
       <div className="max-w-6xl space-y-16 sm:space-y-24 md:space-y-32">
         <div className="max-w-3xl space-y-8 sm:space-y-12">

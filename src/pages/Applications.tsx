@@ -34,8 +34,8 @@ export function Applications() {
     <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title={t('nav.applications')} 
-        description="CVD diamond applications: hardness for cutting tools, thermal conductivity for cooling, materials for semiconductors and research." 
-        keywords="cvd diamond applications, cutting tools, heat sink, heat spreader, semiconductor diamond, university research"
+        description="CVD materials applications: hardness for cutting tools, thermal conductivity for cooling, materials for semiconductors and research." 
+        keywords="cvd materials applications, cutting tools, heat sink, heat spreader, semiconductor materials, university research"
       />
       <div className="max-w-6xl space-y-16 sm:space-y-24">
         <div className="max-w-3xl space-y-8 sm:space-y-12">

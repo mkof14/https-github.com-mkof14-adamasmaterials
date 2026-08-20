@@ -8,15 +8,15 @@ export function QualityProcess() {
     <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title="Quality & Process" 
-        description="How Adamas Materials grows and checks CVD diamond for industrial and research use." 
-        keywords="cvd diamond process, quality assurance, raman spectroscopy, diamond growth standards"
+        description="How Adamas Materials grows and checks CVD materials for industrial and research use." 
+        keywords="cvd materials process, quality assurance, raman spectroscopy, cvd growth standards"
       />
       <div className="max-w-6xl space-y-16 sm:space-y-24 md:space-y-32">
         <div className="max-w-3xl space-y-8 sm:space-y-12">
           <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Process</span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display leading-[1.05] italic text-pretty">Quality &<br/><span className="not-italic font-bold">Process.</span></h1>
           <p className="text-lg sm:text-2xl font-sans font-light leading-relaxed opacity-80 dark:text-brand-cream/90">
-            We focus on CVD diamond growth and clear quality checks. Specs, documentation, and repeatable process control come first.
+            We focus on CVD materials growth and clear quality checks. Specs, documentation, and repeatable process control come first.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export function QualityProcess() {
             <ProcessCard 
               icon={<Layers className="h-8 w-8" />}
               title="CVD Growth"
-              description={<>Chemical Vapor Deposition (<TechnicalTerm term="CVD">CVD</TechnicalTerm>) grows diamond from a process gas under controlled conditions. This is our core method for tooling, thermal, semiconductor, and research grades.</>}
+              description={<>Chemical Vapor Deposition (<TechnicalTerm term="CVD">CVD</TechnicalTerm>) grows film from a process gas under controlled conditions. This is our core method for tooling, thermal, semiconductor, and research grades.</>}
               specs={["CVD only", "Grade control", "Custom specs"]}
             />
             <ProcessCard 
@@ -44,7 +44,7 @@ export function QualityProcess() {
             <div className="space-y-8">
               <ProtocolItem 
                 title="Spectroscopic Checks"
-                text={<>Batches can be checked with <TechnicalTerm term="Raman Spectroscopy">Raman</TechnicalTerm> and related methods to confirm diamond quality and process consistency.</>}
+                text={<>Batches can be checked with <TechnicalTerm term="Raman Spectroscopy">Raman</TechnicalTerm> and related methods to confirm crystal quality and process consistency.</>}
               />
               <ProtocolItem 
                 title={<TechnicalTerm term="AFM">Surface Checks</TechnicalTerm>}

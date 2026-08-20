@@ -16,8 +16,8 @@ export function RFQ() {
     <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title={t('nav.rfq')} 
-        description="Request a quote for CVD diamond materials and technical solutions." 
-        keywords="cvd diamond rfq, cutting tools quote, data center cooling diamond, semiconductor cvd inquiry"
+        description="Request a quote for CVD materials materials and technical solutions." 
+        keywords="cvd materials rfq, cutting tools quote, data center cooling materials, semiconductor cvd inquiry"
       />
       <div className="max-w-6xl flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-24">
         <div className="flex-1 space-y-10 sm:space-y-12">
@@ -25,7 +25,7 @@ export function RFQ() {
             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-brand-tan font-bold">Inquiry</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-display leading-[1.05] italic text-pretty">Request for<br/><span className="not-italic font-bold">Proposal.</span></h1>
             <p className="font-sans text-base sm:text-xl font-light opacity-60 leading-relaxed border-l-2 border-brand-tan pl-5 sm:pl-6">
-              Tell us the application, target specs, and volume. We work with industrial and research customers on CVD diamond projects.
+              Tell us the application, target specs, and volume. We work with industrial and research customers on CVD materials projects.
             </p>
           </div>
 

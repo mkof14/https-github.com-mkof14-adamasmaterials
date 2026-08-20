@@ -9,8 +9,8 @@ export function About() {
     <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title={t('nav.about')} 
-        description="Adamas Materials supplies CVD diamond for cutting tools, data center cooling, semiconductors, universities, and technical solutions." 
-        keywords="about adamas materials, cvd diamond company, charlotte cvd diamond"
+        description="Adamas Materials supplies CVD materials for cutting tools, data center cooling, semiconductors, universities, and technical solutions." 
+        keywords="about adamas materials, cvd materials company, charlotte cvd materials"
       />
       <div className="max-w-4xl space-y-16 sm:space-y-24">
         <div className="space-y-8 sm:space-y-12">

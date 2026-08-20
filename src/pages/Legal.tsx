@@ -17,7 +17,7 @@ export function Legal() {
     },
     compliance: {
       title: "Compliance & Standards",
-      text: "We adhere to ISO 9001:2015, ASTM standards for synthetic diamond growth, and full export compliance regulations (ITAR/EAR where applicable). Our sourcing is ethical and fully transparent within our industrial supply chain."
+      text: "We adhere to ISO 9001:2015, ASTM standards for CVD growth, and full export compliance regulations (ITAR/EAR where applicable). Our sourcing is ethical and fully transparent within our industrial supply chain."
     }
   };
 

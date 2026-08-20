@@ -10,8 +10,8 @@ export function Investors() {
     <div className="container mx-auto px-5 sm:px-6 py-16 sm:py-24">
       <SEO 
         title={t('nav.investors')} 
-        description="Investor information for Adamas Materials — CVD diamond for industrial tooling, cooling, semiconductors, and research." 
-        keywords="investor relations, cvd diamond, industrial tooling, thermal management, adamas materials"
+        description="Investor information for Adamas Materials — CVD materials for industrial tooling, cooling, semiconductors, and research." 
+        keywords="investor relations, cvd materials, industrial tooling, thermal management, adamas materials"
       />
       <div className="max-w-3xl space-y-12 sm:space-y-16">
         <div className="space-y-6 sm:space-y-8">

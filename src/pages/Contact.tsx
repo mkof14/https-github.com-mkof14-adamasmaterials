@@ -32,8 +32,8 @@ export default function Contact() {
     >
       <SEO 
         title="Contact" 
-        description="Contact Adamas Materials for CVD diamond projects: cutting tools, heat sinks and heat spreaders, semiconductors, and research." 
-        keywords="contact adamas materials, cvd diamond inquiry, cutting tools, heat spreader, charlotte nc"
+        description="Contact Adamas Materials for CVD materials projects: cutting tools, heat sinks and heat spreaders, semiconductors, and research." 
+        keywords="contact adamas materials, cvd materials inquiry, cutting tools, heat spreader, charlotte nc"
       />
 
       <div className="max-w-3xl space-y-8 sm:space-y-10">

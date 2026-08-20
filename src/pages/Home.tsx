@@ -12,8 +12,8 @@ export function Home() {
     <div className="flex flex-col">
       <SEO 
         title="Home" 
-        description="Adamas Materials — CVD diamond for cutting tools, heat sinks and heat spreaders, semiconductors, universities, and technical solutions." 
-        keywords="cvd diamond, cutting tools, heat spreader, data center cooling, semiconductor diamond, adamas materials"
+        description="Adamas Materials — CVD materials for cutting tools, heat sinks and heat spreaders, semiconductors, universities, and technical solutions." 
+        keywords="cvd materials, cutting tools, heat spreader, data center cooling, semiconductor materials, adamas materials"
       />
 
       {/* Hero Section — equal columns */}

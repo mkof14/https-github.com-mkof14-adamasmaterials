@@ -15,7 +15,7 @@ export const materials: Material[] = [
     id: 'cvd-tooling',
     name: 'CVD for Cutting Tools',
     category: 'Tooling',
-    description: 'CVD diamond for cutting inserts and wear parts. Extreme hardness (up to ~100 GPa) and wear resistance for precision machining and long edge life.',
+    description: 'CVD materials for cutting inserts and wear parts. Extreme hardness (up to ~100 GPa) and wear resistance for precision machining and long edge life.',
     specifications: [
       { label: 'Process', value: 'CVD' },
       { label: 'Hardness', value: 'Up to ~100 GPa' },
@@ -41,7 +41,7 @@ export const materials: Material[] = [
     id: 'cvd-semiconductor',
     name: 'CVD for Semiconductors',
     category: 'Semiconductor',
-    description: 'CVD diamond for substrates and high-power electronics. Wide bandgap, high carrier mobility, and strong heat handling versus Si and SiC in demanding cases.',
+    description: 'CVD materials for substrates and high-power electronics. Wide bandgap, high carrier mobility, and strong heat handling versus Si and SiC in demanding cases.',
     specifications: [
       { label: 'Process', value: 'CVD' },
       { label: 'Use cases', value: 'RF, optoelectronics, power' },
@@ -54,7 +54,7 @@ export const materials: Material[] = [
     id: 'cvd-research',
     name: 'CVD for Research & Custom Work',
     category: 'Research',
-    description: 'Custom CVD diamond for universities and engineering teams studying thermal, electronic, and materials performance.',
+    description: 'Custom CVD materials for universities and engineering teams studying thermal, electronic, and materials performance.',
     specifications: [
       { label: 'Process', value: 'CVD' },
       { label: 'Scope', value: 'Custom specs' },
